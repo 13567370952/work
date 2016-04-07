@@ -28,7 +28,7 @@ a{
 	display: inline-block;
 	margin: 7px 0px;
 	color: #FFF;
-	line-height: 20px;
+	line-height: 16px;
 }
 .dlnav .dl{
 	border-right: 1px solid #41A5DD;
@@ -92,5 +92,21 @@ a{
 	background-color: #0EA4F9;
 }
 .wmnav .left img{
-	margin:5px 10px 0px 0px;
+	margin:7px 10px 0px 0px;
+}
+.wmnav .yi{
+
+}
+.wmnav .yi li{
+	float: left;
+}
+.wmnav .yi li a{
+	padding: 0px 12px;
+	font-size: 14px;
+	font-family: "微软雅黑";
+	line-height: 60px;
+	color: #FFF;
+}
+.wmnav .yi li:hover{
+	background-color: #0B99E5;
 }
