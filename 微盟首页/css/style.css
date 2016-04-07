@@ -1,0 +1,96 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+	font-size: 12px;
+	font-family: "宋体","微软雅黑";
+	background-color: black;
+}
+a{
+	text-decoration: none;
+}
+.cw{
+	width: 1000px;
+	margin: 0 auto;
+}
+.left{
+	clear: both;
+	float: left;
+}
+.right{
+	float: right;
+}
+.dlnav{
+	color: #FFF;
+	background-color: #128ED4;
+	height: 30px;
+}
+.dlnav a{
+	display: inline-block;
+	margin: 7px 0px;
+	color: #FFF;
+	line-height: 20px;
+}
+.dlnav .dl{
+	border-right: 1px solid #41A5DD;
+	padding-right: 10px;
+}
+.dlnav .zc{
+	padding-left: 10px;
+}
+.dlnav ul li{
+	float: left;
+}
+.dlnav ul li a{
+	padding: 0 10px;
+}
+.dlnav ul li a{
+	border-right:1px solid #41A5DD;
+}
+.dlnav ul li:last-child a{
+	border-right: none;
+}
+.dlnav ul li:first-child a{
+	padding-right: 20px;
+}
+.dlnav ul li.glht {
+	background:url(../img/htgl.png) no-repeat 2px center;
+}
+.dlnav ul li.bzzx a{
+	padding-right: 20px;
+	background:url(../img/bzzx.png) no-repeat 63px center;
+}
+.dlnav ul li.bzzx{
+	position: relative;
+}
+.dlnav ul li.bzzx ul{
+	display: none;
+	padding-top: 10px;
+	position: absolute;
+	width: 102px;
+	height: 96px;
+	top: 30px;
+	left:-10px;
+	background:url(../img/xl.png) no-repeat;
+}
+.dlnav ul li.bzzx ul li{
+	clear: both;
+	margin: 3px 0px;
+}
+.dlnav ul li.bzzx ul li a{
+	margin: 0px;
+	color: #128ED4;
+	border: none;
+	padding:0px 26px;
+}
+.dlnav ul li.bzzx ul li a:hover{
+	background-color: #128ED4;
+	color: #FFF;
+}
+/*微盟导航*/
+.wmnav{
+	height: 60px;
+	background-color: #0EA4F9;
+}
+.wmnav .left img{
+	margin:5px 10px 0px 0px;
+}
