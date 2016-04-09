@@ -112,7 +112,25 @@ a{
 .wmnav .yi li:hover{
 	background-color: #0B99E5;
 }
-.dbnner{
+.wmnav .jjfa{
+	position: relative;
+}
+.wmnav .yi ul{
+	display: none;
+	position: absolute;
+	top:60px;
+	left: 0px;
+	border-bottom: 2px solid #0ba1fa;
+	background-color: #FFF;
+	padding: 10px 0px;
+}
+.wmnav .yi ul a{
+	display: block;
+	width: 116px;
+	padding:0 20px;
+	color: #959595;
+	line-height: 24px;
+}.dbnner{
 	position: relative;
 	overflow: hidden;
 }
@@ -215,6 +233,33 @@ a{
 	font-size: 15px;
 	color: #A0A0A0;
 }
+.cpzxx{
+	position: relative;
+}
+.cpzxx .zuo,.cpzxx .you{
+	position: absolute;
+	display: inline-block;
+	width: 24px;
+	height: 47px;
+	background-color: #000;
+	opacity: 0.2;
+	top:116px;
+	overflow: hidden;
+	cursor: pointer;
+}
+.cpzxx .zuo:hover,.cpzxx .you:hover{
+	opacity: 0.5;
+}
+.cpzxx .zuo img,.cpzxx .you img{
+	margin-top: 16px;
+	margin-left: 5px;
+}
+.cpzxx .zuo{
+	left: 8px;
+}
+.cpzxx .you{
+	right: 10px;
+}
 .cpzxx .rq{
 	font-family: "微软雅黑";
 	width: 190px;
@@ -231,6 +276,21 @@ a{
 }
 .cpzxx .xfxt{
 	background: url(../img/xfxt.png) no-repeat;
+}
+.cpzxx .fxxt{
+	background: url(../img/fxxt.png) no-repeat;
+}
+.cpzxx .fxxt1{
+	background: url(../img/fxxt1.png) no-repeat;
+}
+.cpzxx .jyxt{
+	background: url(../img/jyxt.png) no-repeat;
+}
+.cpzxx .kfxt{
+	background: url(../img/kfxt.png) no-repeat;
+}
+.cpzxx .znyj{
+	background: url(../img/znyj.png) no-repeat;
 }
 .cpzxx .rq:hover .shang{
 	display: none;
@@ -259,7 +319,7 @@ a{
 	background-color: #FFFFFF;
 }
 .cpzxx .rq ul li{
-	padding:12px;
+	padding:12px 0px 12px 12px;
 }
 .cpzxx .rq ul li:hover{
 	background-color: #F5F5F5;
@@ -276,4 +336,24 @@ a{
 .cpzxx .rq ul img{
 	float: left;
 	margin-right: 10px;
+}
+.cpzxx .dian{
+	position: absolute;
+	top:306px;
+	left: 50%;
+	margin-left: -16px;
+}
+.cpzxx .dian li{
+	float: left;
+	margin: 0px 3px;
+	width: 10px;
+	height: 10px;
+	border-radius: 10px;
+	background-color: #c4c4c4;
+}
+.cpzxx .dian li.active{
+	background-color: #828282;
+}
+.cpzxx .ye.none{
+	display: none;
 }
