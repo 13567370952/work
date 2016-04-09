@@ -429,5 +429,9 @@ a{
 	color: #848484;
 	line-height: 30px;
 }
-
-	
+.zhcs{
+	clear: both;
+}
+.zhcs hr{
+	width: 675px;
+}
