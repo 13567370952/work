@@ -4,7 +4,6 @@ body{
 	font-size: 12px;
 	font-family:"微软雅黑";
 	min-width: 1000px;
-	height: 3000px;
 }
 a{
 	text-decoration: none;
@@ -363,13 +362,13 @@ a{
 	display: none;
 }
 /*微商解决方案*/
-.wsjj .zhong p{
+.wsjj .zhong p,.zhcs .zhong p{
 	font-size: 14px;
 	line-height: 20px;
 	text-indent: 2em;
-	color: #dfdfdf;
+	color: #8A8A8A;
 }
-.wsjj .zhong a{
+.wsjj .zhong a,.zhcs .zhong a{
 	margin-left: 25px;
 }
 .wsjjx{
@@ -402,7 +401,6 @@ a{
 	color: #848484;
 }
 .cpzc li{
-	width: 70px;
 	padding:12px 16px;
 	text-align: center;
 	float: left;
@@ -416,6 +414,7 @@ a{
 	color: #fff;
 }
 .cpzc li .t{
+	width: 70px;
 	padding-bottom: 18px;
 	border-bottom: #dcdcdc 1px solid;
 }
@@ -429,9 +428,171 @@ a{
 	color: #848484;
 	line-height: 30px;
 }
-.zhcs{
+.zhct{
 	clear: both;
+	padding-bottom: 20px;
+	overflow: hidden;
+	background-color: #F0F0F0;
 }
-.zhcs hr{
+.zhct hr{
 	width: 675px;
+}
+.zhctx .left{
+	width: 324px;
+	padding-top: 20px;
+}
+.zhctx .left p{
+	text-align: center;
+	color: #909090;
+	font-size: 14px;
+	line-height: 20px;
+	margin: 10px 17px;
+	padding: 20px 18px;
+}
+.zhctx .left p.first{
+	background: url(../img/yinhao.png) no-repeat;
+	margin-bottom: 25px;
+}
+.zhctx .left p.sec{
+	background: url(../img/yinhao2.png) no-repeat;
+	margin:8px 17px 0px 17px;
+}
+.zhctx .right .cpzc{
+	border: 0px;
+}
+.zhctx .right .cpzc h3{
+	padding-left: 12px;
+}
+.zhctx .right .khal li{
+	padding: 0px;
+	margin-right: 49px;
+}
+.zhctx .right .khal{
+	padding-left: 12px;
+} 
+.zhcs .tou hr{
+	width: 675px;
+}
+.zhcs .khal li{
+	width: 72px;
+	text-align: center;
+	margin-right: 29px;
+}
+#cpzc ul li{
+	padding:12px 7px;
+}
+#cpzc ul li .t {
+	width: 90px;
+}
+.dt hr{
+	width: 831px;
+}
+.dtxx{
+	width: 327px;
+	float: left;
+	font-size: 14px;
+	color: #434343;
+	margin-right: 9px;
+}
+.dtxx .s{
+	line-height: 50px;
+	overflow: hidden;
+} 
+.dtxx .s h3{
+	font-weight: bold;
+	font-size: 16px;
+}
+.dtxx .s a{
+	color: #434343;
+}
+.dtxx .z{
+	border: 1px solid #ccc;
+	line-height: 85px;
+	text-indent: 35px;
+	margin-bottom: 5px;
+}
+.dtxx .z p{
+	background: url(../img/fj.png) no-repeat  218px center;
+}
+.dtxx ul {
+	line-height: 30px;
+	font-size: 15px;
+}
+.dtxx ul span{
+	float: left;
+	margin: 0px 8px;
+	color: #ccc;
+}
+.dtxx ul a{
+	float: left;
+	display:block;
+	width: 255px;
+	color: #434343;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.zxhd .z{
+	line-height: 0px;
+	text-indent: 0px;
+}
+.cpdt .z p{
+	background: url(../img/cpdt.png)  no-repeat  218px center;
+}
+.dt{
+	overflow: hidden;
+	padding-bottom: 20px;
+}
+.yj{
+	overflow: hidden;
+	background-color: #F0F0F0;
+}
+.yj ul li{
+	width: 144px;
+	float: left;
+}
+.yj ul{
+	padding:20px 0px;
+	overflow: hidden;
+}
+.yj ul ul{
+	padding:10px 0px;
+	overflow: hidden;
+}
+.yj ul li{
+	margin-right: 70px;
+}
+.yj ul li h3{
+	line-height: 45px;
+	font-size: 16px;
+	font-weight: 600;
+	color: #6A6A6A;
+	border-bottom: 1px solid #E2E2E2;
+}
+.yj ul li li{
+	line-height: 30px;
+	font-size: 16px;
+}
+.yj ul li li a{
+	color: #57A5DA;
+}
+.yj ul.yi{
+	border-bottom: #E6E6E6 1px solid;
+}
+.yj ul li li img{
+	margin-top: 20px;
+}
+.footer{
+	padding: 20px;
+}
+.footer p{
+	text-align: center;
+	font-size: 14px;
+	line-height: 30px;
+	color: #BDBDBD;
+}
+.footer p a{
+	font-size: 16px;
+	color: #868686;
+	padding: 0 20px;
 }
