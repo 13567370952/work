@@ -22,7 +22,7 @@ a{
 .dlnav{
 	color: #FFF;
 	background-color: #128ED4;
-	height: 30px;
+	min-height: 30px;
 }
 .dlnav a{
 	display: inline-block;
@@ -71,6 +71,7 @@ a{
 	top: 30px;
 	left:-10px;
 	background:url(../img/xl.png) no-repeat;
+	z-index: 9999;
 }
 .dlnav ul li.bzzx ul li{
 	clear: both;
@@ -121,6 +122,7 @@ a{
 	border-bottom: 2px solid #0ba1fa;
 	background-color: #FFF;
 	padding: 10px 0px;
+	z-index: 999;
 }
 .wmnav .yi ul a{
 	display: block;
@@ -493,6 +495,9 @@ a{
 	font-size: 14px;
 	color: #434343;
 	margin-right: 9px;
+}
+.dtxx .z a{
+	color: #434343;
 }
 .dtxx .s{
 	line-height: 50px;

@@ -1,6 +1,8 @@
 $(document).ready(function(){
 	hd();
   cpzx();
+  bzzx();
+  jjff()
 });
 function cpzx(){
   var now = 0;
@@ -65,3 +67,25 @@ function hd(){
     goToSlide(now);
   	},5000);
 };
+function bzzx(){
+  $(".dlnav .bzzx").bind("mouseover",function(){
+     $(".dlnav .bzzx ul").show();
+  })
+  $(".dlnav .bzzx").bind("mouseout",function(){
+     $(".dlnav .bzzx ul").hide();
+  })
+  $(".dlnav .bzzx ul li").click(function(){
+    $(".dlnav .bzzx ul").hide();
+  })
+}
+function jjff(){
+  $(".wmnav .jjfa").mouseover(function(){
+    $(".wmnav .jjfa ul").show();
+  })
+  $(".wmnav .jjfa").mouseout(function(){
+    $(".wmnav .jjfa ul").hide();
+  })
+  $(".wmnav .jjfa ul li").click(function(){
+    $(".wmnav .jjfa ul").hide();
+  })
+}
