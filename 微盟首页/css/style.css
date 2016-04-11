@@ -111,6 +111,9 @@ a{
 .wmnav .yi li:hover{
 	background-color: #0B99E5;
 }
+.wmnav .yi ul li:hover a{
+	color: #FFFFFF;
+}
 .wmnav .jjfa{
 	position: relative;
 }
