@@ -218,14 +218,14 @@ a{
 	line-height: 74px;
 	overflow: hidden;
 }
-.tou hr{
+.tou .hr{
 	float: left;
 	width: 680px;
 	margin-left: 20px;
 	margin-top: 38px;
 	border-top:1px solid #ccc;
 }
-.wsjj .tou hr{
+.wsjj .tou .hr{
 	width: 727px;
 }
 .tou h3{
@@ -381,6 +381,7 @@ a{
 }
 .wsjjx .cpzc{
 	float: left;
+	width:665px;
 }
 .wsjjx .khal{
 	width:304px;
@@ -389,8 +390,7 @@ a{
 }
 .cpzc{
 	overflow: hidden;
-	width:665px;
-	border-right: 1px solid #dcdcdc;
+	padding-bottom: 15px;
 }
 .cpzc h3,.khal h3{
 	font-size: 16px;
@@ -423,6 +423,9 @@ a{
 	padding-bottom: 18px;
 	border-bottom: #dcdcdc 1px solid;
 }
+.khal{
+	border-left: 1px solid #dcdcdc;
+}
 .khal li{
 	padding:22px 0px;
 	float: left;
@@ -439,7 +442,7 @@ a{
 	overflow: hidden;
 	background-color: #F0F0F0;
 }
-.zhct hr{
+.zhct .hr{
 	width: 675px;
 }
 .zhctx .left{
@@ -462,7 +465,11 @@ a{
 	background: url(../img/yinhao2.png) no-repeat;
 	margin:8px 17px 0px 17px;
 }
-.zhctx .right .cpzc{
+.zhctx .right{
+	padding-left: 18px;
+	width: 658px;
+}
+.zhctx .right .khal{
 	border: 0px;
 }
 .zhctx .right .cpzc h3{
@@ -472,10 +479,13 @@ a{
 	padding: 0px;
 	margin-right: 49px;
 }
+.zhctx .right .khal li.last{
+	margin-right: 0px;
+}
 .zhctx .right .khal{
 	padding-left: 12px;
 } 
-.zhcs .tou hr{
+.zhcs .tou .hr{
 	width: 675px;
 }
 .zhcs .khal li{
@@ -486,12 +496,21 @@ a{
 #cpzc ul li{
 	padding:12px 7px;
 }
+#cpzc ul li{
+	margin-right: 5px;
+}
 #cpzc ul li .t {
 	width: 90px;
 }
-.dt hr{
+.dt .hr{
 	width: 831px;
 }
+.dt h3{
+	line-height: 50px;
+}
+.dt .hr{
+	margin-top: 25px;
+} 
 .dtxx{
 	width: 327px;
 	float: left;
@@ -579,7 +598,7 @@ a{
 }
 .yj ul li li{
 	line-height: 30px;
-	font-size: 16px;
+	font-size: 14px;
 }
 .yj ul li li a{
 	color: #57A5DA;
@@ -589,6 +608,8 @@ a{
 }
 .yj ul li li img{
 	margin-top: 20px;
+	width: 110px;
+	height: auto;
 }
 .footer{
 	padding: 20px;
