@@ -136,6 +136,9 @@ a{
 	color: #0DA3F9;
 }
 /*服务市场主体部分*/
+.fwsczt{
+	overflow: hidden;
+}
 .fwsczt .left ul{
 	overflow: hidden;
 	border-bottom:1px solid #CCCCCC;
@@ -235,4 +238,86 @@ a{
 	text-decoration: underline;
 	color: #919191;
 	background: url(../img/fws.png) no-repeat 10px center;
+}
+.fwsczt .fy li{
+	font-size: 12px;
+	float: left;
+	line-height: 18px;
+	border: 1px solid #ccc;
+	margin-left: 8px;
+}
+.fwsczt .fy li.syy{
+	background: url(../img/syy.png) no-repeat 5px center;
+}
+.fwsczt .fy li.xyy{
+	background: url(../img/xyy.png) no-repeat 52px center;
+}
+.fwsczt .fy li a{
+	display: inline-block;
+	padding:0px 12px;
+	color: #333333;
+}
+.fwsczt .fy span{
+	float: left;
+	margin-left: 8px;
+}
+.fwsczt .fy ul{
+	display: inline;
+	float: right;
+}
+.yj{
+	margin-top: 50px;
+	overflow: hidden;
+	background-color: #F0F0F0;
+	border:1px solid #E6E6E6 ;
+}
+.yj ul li{
+	width: 144px;
+	float: left;
+}
+.yj ul{
+	padding:20px 0px;
+	overflow: hidden;
+}
+.yj ul ul{
+	padding:10px 0px;
+	overflow: hidden;
+}
+.yj ul li{
+	margin-right: 70px;
+}
+.yj ul li h3{
+	line-height: 45px;
+	font-size: 16px;
+	font-weight: 600;
+	color: #6A6A6A;
+	border-bottom: 1px solid #E2E2E2;
+}
+.yj ul li li{
+	line-height: 30px;
+	font-size: 14px;
+}
+.yj ul li li a{
+	color: #57A5DA;
+}
+.yj ul.yi{
+	border-bottom: #E6E6E6 1px solid;
+}
+.footer{
+	padding: 20px;
+	padding-bottom: 80px;
+}
+.footer p{
+	text-align: center;
+	font-size: 14px;
+	line-height: 20px;
+	color: #BDBDBD;
+}
+.footer p.mb{
+	margin-bottom: 12px;
+}
+.footer p a{
+	font-size: 16px;
+	color: #868686;
+	padding: 0 20px;
 }
