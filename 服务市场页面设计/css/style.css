@@ -1,0 +1,238 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+	font-size:14px;
+	font-family:"微软雅黑";
+}
+input,section,option{
+	padding:0px;
+	margin: 0px;
+}
+a{
+	text-decoration: none;
+}
+.cw{
+	width:1000px;
+	margin:0 auto;
+}
+.left{
+	float:left;
+}
+.right{
+	float:right;
+}
+.dlnav p a{
+	color: #000;
+}
+
+.dlnav{
+	line-height: 30px;
+	height: 30px;
+	background-color: #E9E9E9;
+	font-size: 12px;
+}
+.dlnav p .dl{
+	padding-right: 10px;
+	border-right: 1px solid #CCCCCC;
+}
+.dlnav p .zc{
+	padding-left: 10px;
+}
+.dlnav ul li{
+	float: left;
+}
+.dlnav ul li a{
+	color: #AFAFAF;
+	padding: 0px 12px;
+	border-right: 1px solid #CCCCCC;
+}
+.dlnav ul li:last-child a{
+	padding-right: 0px;
+	border-right:none;
+}
+.dlnav ul li .gzwm{
+	padding-right: 25px;
+	background: url(../img/gzwm.png) no-repeat 64px center;
+}
+.lgnav .cw{
+	height: 36px;
+	padding: 22px 0px;
+	line-height: 36px;
+	background: url(../img/logo.png) no-repeat left 17px;
+}
+.lgnav .cw input{
+	vertical-align: middle;
+	line-height: 34px;
+}
+.lgnav .cw .ss{
+	margin-right: 15px;
+	width: 456px;
+	font-size: 14px;
+	text-indent: 10px;
+	background: url(../img/ss.png) no-repeat right 10px center;
+	border: none;
+	border: 1px solid #999999;
+}
+.lgnav h3{
+	color: #333333;
+	margin: 8px 0px;
+	margin-left: 184px;
+	font-size: 18px;
+	text-indent: 14px;
+	line-height: 20px;
+	border-left: 1px solid #999999;
+}
+.lgnav section{
+	border: 1px solid #999999;
+	line-height: 34px;
+	font-size: 12px;
+	color: #BDBDBD;
+	padding:0px 30px 0px 15px;
+	background: url(../img/sj.png) no-repeat 74px center;
+	cursor: pointer;
+}
+.nav{
+	height: 45px;
+	background-color: #0DA3F9;
+	line-height: 45px;
+}
+.nav .left li{
+	float: left;
+	padding:0px 20px;
+}
+.nav .left li.active{
+	background-color: #0289D7;
+}
+.nav .left li a{
+	color: #fff;
+}
+.nav .right{
+	padding-left: 35px;
+	background: url(../img/lb.png) no-repeat left center;
+}
+.nav .right a{
+	display: inline-block;
+	width: 205px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	color: #fff;
+}
+.nav .right li{
+	overflow: hidden;
+	height: 45px;
+}
+.mbxnav{
+	overflow: hidden;
+	line-height: 45px;
+}
+.mbxnav ul li{
+	float: left;
+}
+.mbxnav ul li span{
+	padding: 0 7px;
+}
+.mbxnav ul li a{
+	color: #0DA3F9;
+}
+/*服务市场主体部分*/
+.fwsczt .left ul{
+	overflow: hidden;
+	border-bottom:1px solid #CCCCCC;
+}
+.fwsczt .left li{
+	width: 168px;
+	border:1px solid #CCCCCC;
+	border-bottom: none;
+	line-height: 34px;
+	text-indent: 40px;
+	position: relative;
+	cursor: pointer;
+}
+.fwsczt .left li span{
+	position: absolute;
+	top:0px;
+	right: 30px;
+}
+.fwsczt .left li.active{
+	background-color: #F6F6F6;
+	color: #2EA9F9;
+	border-left: 2px solid #2EA9F9;
+	width: 167px;
+	text-indent: 39px;
+}
+.fwsczt .left li:hover{
+	background-color: #F6F6F6;
+}
+.fwsczt .right{
+	width: 814px;
+}
+.fwsczt .right .tou{
+	overflow: hidden;
+	border: 1px solid #CCCCCC;
+}
+.fwsczt .right .tou{
+	line-height: 34px;
+}
+.fwsczt .right .tou .an{
+	display: inline-block;
+	width: 105px;
+	text-indent: 25px;
+	border-right: 1px solid #CCCCCC;
+	cursor:pointer;
+	position: relative;
+}
+.fwsczt .right .tou .an.active{
+	color: #2EA9F9;
+}
+.fwsczt .right .tou .an:last-child{
+	width: 96px;
+}
+.fwsczt .right .tou .an img{
+	position: absolute;
+	right: 18px;
+	top:10px;
+}
+.fwsczt .xia{
+	margin-top: 20px;
+}
+.fwsczt .xia li{
+	border:1px solid #CCCCCC;
+	float: left;
+	width: 190px;
+	padding-bottom: 8px;
+	margin-right: 15px;
+	margin-bottom: 20px;
+}
+.fwsczt .xia li.guan{
+	background: url(../img/guan.png) no-repeat 161px 184px;
+}
+.fwsczt .xia li.qi{
+	background: url(../img/qi.png) no-repeat 161px 184px;
+}
+.fwsczt .xia .jg{
+	color: red;
+	line-height: 30px;
+	font-size: 14px;
+}
+.fwsczt .xia .jg span{
+	font-size: 8px;
+	margin-left: 10px;
+}
+.fwsczt .xia p{
+	text-indent: 10px;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+	overflow: hidden;
+	line-height: 20px;
+}
+.fwsczt .xia .yymc{
+	color: #000;
+}
+.fwsczt .xia .fws{
+	font-size: 10px;
+	text-indent: 30px;
+	text-decoration: underline;
+	color: #919191;
+	background: url(../img/fws.png) no-repeat 10px center;
+}
