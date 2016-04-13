@@ -196,10 +196,10 @@ a{
 	right: 18px;
 	top:10px;
 }
-.fwsczt .xia{
+.fwsczt .xia,.fwsyzt .xia{
 	margin-top: 20px;
 }
-.fwsczt .xia li{
+.fwsczt .xia li,.fwsyzt .xia li{
 	border:1px solid #CCCCCC;
 	float: left;
 	width: 190px;
@@ -207,65 +207,81 @@ a{
 	margin-right: 15px;
 	margin-bottom: 20px;
 }
+.fwsczt .xia li:hover,.fwsyzt .xia li:hover{
+	border: 1px solid #009efe;
+}
+.fwsyzt .xia li{
+	width: 226px;
+	margin-right: 20px;
+	padding-bottom: 14px;
+}
 .fwsczt .xia li.guan{
 	background: url(../img/guan.png) no-repeat 161px 184px;
+}
+.fwsyzt .xia li.guan{
+	background: url(../img/guand.png) no-repeat 195px 211px;
 }
 .fwsczt .xia li.qi{
 	background: url(../img/qi.png) no-repeat 161px 184px;
 }
-.fwsczt .xia .jg{
+.fwsyzt .xia li.qi{
+	background: url(../img/qid.png) no-repeat 195px 211px;
+}
+.fwsczt .xia .jg,.fwsyzt .xia .jg{
 	color: red;
 	line-height: 30px;
 	font-size: 14px;
 }
-.fwsczt .xia .jg span{
+.fwsczt .xia .jg span,.fwsyzt .xia .jg span{
 	font-size: 8px;
 	margin-left: 10px;
 }
-.fwsczt .xia p{
+.fwsczt .xia p,.fwsyzt .xia p{
 	text-indent: 10px;
 	text-overflow:ellipsis;
 	white-space:nowrap;
 	overflow: hidden;
 	line-height: 20px;
 }
-.fwsczt .xia .yymc{
+.fwsczt .xia .yymc,.fwsyzt .xia .yymc{
 	color: #000;
+	max-width: 145px;
 }
-.fwsczt .xia .fws{
+.fwsczt .xia .fws,.fwsyzt .xia .fws{
 	font-size: 10px;
 	text-indent: 30px;
 	text-decoration: underline;
 	color: #919191;
 	background: url(../img/fws.png) no-repeat 10px center;
 }
-.fwsczt .fy li{
+ .fy li{
 	font-size: 12px;
 	float: left;
 	line-height: 18px;
 	border: 1px solid #ccc;
 	margin-left: 8px;
 }
-.fwsczt .fy li.syy{
+.fwsczt .fy li.syy,.fwsyzt .fy li.syy{
 	background: url(../img/syy.png) no-repeat 5px center;
 }
-.fwsczt .fy li.xyy{
+.fwsczt .fy li.xyy,.fwsyzt .fy li.xyy{
 	background: url(../img/xyy.png) no-repeat 52px center;
 }
-.fwsczt .fy li a{
+.fwsczt .fy li a,.fwsyzt .fy li a{
 	display: inline-block;
 	padding:0px 12px;
 	color: #333333;
 }
-.fwsczt .fy span{
+.fwsczt .fy span,.fwsyzt .fy span{
 	float: left;
 	margin-left: 8px;
 }
-.fwsczt .fy ul{
+.fwsczt .fy ul,.fwsyzt .fy ul{
 	display: inline;
 	float: right;
 }
 .yj{
+	clear: both;
 	margin-top: 50px;
 	overflow: hidden;
 	background-color: #F0F0F0;
@@ -305,7 +321,7 @@ a{
 }
 .footer{
 	padding: 20px;
-	padding-bottom: 80px;
+	padding-bottom: 50px;
 }
 .footer p{
 	text-align: center;
@@ -320,4 +336,107 @@ a{
 	font-size: 16px;
 	color: #868686;
 	padding: 0 20px;
+}
+/*服务商页*/
+.fwsygs{
+	overflow:hidden;
+	padding: 20px 0px; 
+	background-color: #F6F6F6;
+}
+.fwsygs .left{
+	margin-right: 20px;
+}
+.fwsygs h3 {
+	float: left;
+	font-size: 16px;
+	position: relative;
+	margin-bottom: 5px;
+}
+.fwsygs h3 img{
+	position: absolute;
+	top:0px;
+}
+.fwsygs h3 .gw{
+	right: -22px;
+}
+.fwsygs h3 .qq{
+	right: -44px;
+}
+.fwsygs p{
+	clear: both;
+	font-size: 12px;
+	line-height: 20px;
+	max-width: 350px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.fwsygs p span{
+	color: #BBBBBB;
+	margin-right: 3px;
+}
+.fwsygs p .jiange{
+	letter-spacing: 3px;
+}
+.fwsyzt{
+	overflow: hidden;
+	margin-bottom: 40px;
+	margin-top: 20px;
+}
+.fwsyzt .left{
+	width: 725px;
+}
+.fwsyzt .left .tou{
+	line-height: 48px;
+	border: 1px solid #ccc;
+	font-size: 18px;
+}
+.fwsyzt .left .tou span{
+	display: inline-block;
+	padding: 0px 25px;
+	border-right: 1px solid #ccc;
+	cursor: pointer;
+}
+.fwsyzt .left .tou span.active{
+	background-color: #F6F6F6;
+	color: #0DA3F9;
+}
+.fwsyzt .right{
+	width: 256px;
+}
+.fwsyzt .right .nr{
+	border: 1px solid #ccc;
+	overflow: hidden;
+	margin-bottom: 10px;
+}
+.fwsyzt .right h3{
+	padding:0px 20px;
+	line-height: 48px;
+	background-color: #F5F5F5;
+	font-size: 18px;
+	font-weight: 600;
+	border-bottom: 1px solid #ccc;
+}
+.fwsyzt .right .nrx{
+	padding:20px 20px;
+	line-height: 18px;
+	color: #D0D0D0;
+}
+.fwsyzt .right .nrx .gg{
+	color: #000;
+}
+.fwsyzt .right .qq{
+	line-height: 57px;
+}
+.fwsyzt .right .qq p{
+	position: relative;
+	padding:0 20px;
+}
+.fwsyzt .right .qq p:first-child{
+	border-bottom: 1px solid #ccc;
+}
+.fwsyzt .right .qq p img{
+	position: absolute;
+	right: 20px;
+	top:18px;
 }
