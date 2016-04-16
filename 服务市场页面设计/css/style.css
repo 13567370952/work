@@ -83,7 +83,7 @@ a{
 	line-height: 20px;
 	border-left: 1px solid #999999;
 }
-.lgnav section{
+.lgnav h4{
 	display: inline-block;
 	border: 1px solid #999999;
 	line-height: 34px;
@@ -489,8 +489,29 @@ a{
 	display: inline-block;
 	float: left;
 }
+.xdyzt .dz label,
+.xdyzt .dzz label{
+	padding-left: 25px;
+	background: url(../img/ty.png) no-repeat 5px center;
+
+}
+.xdyzt .dz label.yd,
+.xdyzt .dzz label.yd{
+	background: url(../img/dian.png) no-repeat 5px center;
+}
+.xdyzt .ddbz label{
+	padding-left: 25px;
+	background: url(../img/kuan.png) no-repeat 0px center;
+}
+.xdyzt .ddbz label a{
+	color: #000;
+}
+.xdyzt .ddbz label.yd{
+	background: url(../img/kuand.png) no-repeat 0px center;
+}
 .xdyzt .dz input{
 	margin: 19px 5px 0px 5px; 
+
 }
 .xdyzt .dzz input{
 	margin: 10px 5px 0px 5px; 
@@ -517,7 +538,7 @@ a{
 	border-radius: 5px;
     color:#A0A1A1;
 	padding:0px 10px 0px 30px;
-	background-color: #fff;
+	background: url(../img/jia.png) #fff no-repeat 10px center;
 	margin-top: 10px;
 }
 .xdyzt .ddxq{
@@ -658,7 +679,10 @@ a{
 	border: 1px solid #ccc;
 }
 .xqyfw .left img{
-	margin-left: -4px;
+	width: 250px;
+	height: auto;
+	overflow: hidden;
+	/*margin-left: -4px;*/
 }
 .xqyfw .right{
 	width: 656px;
@@ -675,11 +699,11 @@ a{
 	line-height: 20px;
 }
 .xqyfw .right dl{
-	overflow: hidden;
 	margin-bottom: 20px;
 	font-size: 12px;
 	clear: both;
 	line-height: 22px;
+	height: 22px;
 	color: #A9A9A9;
 }
 .xqyfw .right dt{
@@ -757,6 +781,7 @@ a{
 	line-height: 44px;
 	text-align: center;
 	font-size: 20px;
+	font-weight: 600;
 	color: #FFF;
 	background-color: #FF8A00;
 	margin-bottom: 20px;
@@ -950,4 +975,149 @@ a{
 }
 .zfxqx{
 	padding-top: 20px;
+}
+.zfdd{
+	position: fixed;
+	left:50%;
+	top:50%;
+	margin-left: -145px;
+	margin-top:-88px;
+	overflow: hidden;
+	width: 288px;
+	height: 164px;
+	border: 2px solid #d8f4ff;
+	box-shadow:4px 2px 6px #ccc;
+}
+.zfddx{
+	padding: 22px 30px;
+}
+.zfddx h3{
+	line-height: 30px;
+	font-size: 16px;
+	padding-left: 43px;
+	background: url(../img/zfdd.png) no-repeat left center;
+}
+.zfddx p{
+	font-size: 12px;
+	color: #999999;
+	margin: 16px 0;
+	line-height: 16px;
+}
+.zfddx a{
+	line-height: 28px;
+	display: inline-block;
+	padding: 0px 23px;
+	border: 1px solid #ccc;
+	color: #333;
+	background-color: #FBFBFB;
+	margin-right: 13px;
+	float: left;
+}
+/*续费升级*/
+.xfsj .xqyfw{
+	margin: 30px 0px;
+}
+.xfsj li{
+	border-bottom: 1px solid #0DA3F9;
+	margin-bottom: 68px;
+}
+.xfsj li:last-child{
+	border: none;
+	margin-bottom:0px;
+}
+.xfsj .xqyfw .left{
+	width: 215px;
+}
+.xfsj .xqyfw .left img{
+	width: 215px;
+	height: auto;
+}
+.xfsj .xqyfw .right{
+	padding-right: 90px;
+}
+.xfsj .xqyfw .right .bb dd{
+	border: 1px solid #ccc;
+}
+.xfsj .xqyfw .right .zq dd{
+	border: 1px solid #ccc;
+	background-color: #FFF;
+}
+.xfsj .xqyfw .cw{
+	position: relative;
+}
+.xfsj .xqyfw .cw .dw{
+	position: absolute;
+	font-size: 28px;
+	color: #FF8A00;
+	letter-spacing: 2px;
+	top: 32px;
+	left: -250px;
+}
+.xfsj .xqyfw .cw .dw.wgq{
+	top:84px;
+	left: -280px;
+}
+.xfsj .xqyfw .cw .dw.gfw{
+	top:251px;
+	left: -280px;
+}
+.xfsj .xqyfw .cw .dw.gfw span{
+	display: block;
+}
+.xfsj .xqyfw .right .zq dd.active{
+	background-color: #F6F6F6;
+    border: 1px #ccc dashed;
+}
+.xfsj .xqyfw .right .bb dd.active{
+	position: relative;
+	background-color: #F6F6F6;
+    border: 1px #ccc dashed;
+}
+.xfsj .xqyfw .right .bb dd.active p{
+	position: absolute;
+	top: -46px;
+	left: -1px;
+	width: 394px;
+	height:41px;
+	line-height: 30px;
+	background: url(../img/ts.png) no-repeat;
+	text-indent: 10px;
+}
+/*未完成订单*/
+.wwc .xqyfw .right .gzh h4,
+.wwc .xqyfw .right .bb dd,
+.wwc .xqyfw .right .zq dd{
+	background-color: #F6F6F6;
+}
+.wwc .xqyfw .right .bb dd,
+.wwc .xqyfw .right .zq dd{
+	border: 1px #ccc dashed;
+}
+.wwc .xqyfw .wwcdd{
+	line-height: 50px;
+	width: 524px;
+	margin-left: 60px;
+	text-indent: 73px;
+	font-size: 12px;
+	background: url(../img/zfddd.png) #F3FBFE no-repeat 20px center;
+	margin-bottom: 10px;
+}
+.wwc .xqyfw .wwcdd a{
+	color: #0DA3F9;
+	text-decoration: underline;
+}
+.wwc li{
+	border-bottom: 1px solid #ccc;
+}
+.wwc .xqyfw .cw .dw{
+	width: 184px;
+	font-weight: 200;
+	font-size: 20px;
+	color: #999999;
+	top:66px;
+	line-height: 24px;
+	letter-spacing: 0px;
+}
+.wwc .xqyfw .cw .dw span{
+	color: #FF0000;
 }
