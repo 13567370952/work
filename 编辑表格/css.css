@@ -72,3 +72,21 @@ table td input{
 .xb ul li.active{
 	background-color: #ECEDEF;
 }
+.cz{
+	position: relative;
+}
+.cz span{
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	position: absolute;
+	cursor: pointer;
+}
+.cz .tj{
+	background: url(add.gif) no-repeat;
+	left: 10px;
+}
+.cz .sc{
+	background: url(remove.gif) no-repeat;
+	right: 10px;
+}

@@ -45,7 +45,7 @@ function pxqh(){
 			$(".fwsczt .jg").addClass("s");
 		}
 	})
-	$(".fwsczt .an").each(function(index){
+	$(".fwsczt .an").each(function(index,el){
 		$(this).click(function(){
 			$(".fwsczt .an").removeClass("active").eq(index).addClass("active");
 		})
