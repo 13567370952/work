@@ -23,6 +23,7 @@ table td input{
 .xb{
 	position: relative;
 	cursor: pointer;
+	width: 67px;
 }
 .xb h3{
 	position: absolute;
