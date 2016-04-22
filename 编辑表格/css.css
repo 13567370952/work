@@ -1,13 +1,17 @@
+body{
+	overflow: hidden;
+}
 .ui-table {
 	margin: 20px auto; 
 	border-collapse: collapse; 
 	font-size: 12px; 
 	text-align: center; 
 	color: #666;
+	clear: both;
 }
 .ui-table th, 
 .ui-table td {
-	padding: 4px 8px; 
+	padding: 4px 0px;
 	border: 1px solid #ccc;
 }
 .ui-table th {
@@ -15,7 +19,7 @@
 }
 table td input{
 	border: none;
-	width:50px;
+	width:70px;
 	color: #666;
 	font-size: 12px; 
 	text-align: center;
@@ -23,7 +27,7 @@ table td input{
 .xb{
 	position: relative;
 	cursor: pointer;
-	width: 67px;
+	width: 82px;
 }
 .xb h3{
 	position: absolute;

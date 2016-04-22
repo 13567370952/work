@@ -1,15 +1,3 @@
-
-function px() {
-		$("tbody").each(function(index) {
-			$("tbody .xh").eq(index).html(index+1);
-		});
-}
-function tj() {
-		$(".cz .tj").bind("click",function(){
-		var $clone = $(this).parents("tbody").clone();
-		$(this).parents("tbody").after($clone);
-	})
-}
 $(function(){
         xbqh();
         px();
@@ -42,13 +30,21 @@ function xbqh(){
 		$(this).parent().siblings('h3').find('.c').html($(this).html());
 		$(this).parent().parent().find(".a").html($(this).html());
 	});
-	$("body").bind("click",function(){
-		$("body .xb h3").css({"display":"none"});
-		$("body .xb ul").css({"display":"none"});
-	})
-	
 	$(".cz .sc").bind("click",function(){
 		 $(this).parents("tbody").remove();
 		 px();
 	})
+	$(".cz .tj").bind("click",function(){
+		$(this).parents("tbody").after($(this).parents("tbody").clone(true));
+		px();
+	});
+	$("body").bind("click",function(){
+		$("body .xb h3").css({"display":"none"});
+		$("body .xb ul").css({"display":"none"});
+	})
+}
+function px() {
+		$("tbody").each(function(index) {
+			$("tbody .xh").eq(index).html(index+1);
+		});
 }
