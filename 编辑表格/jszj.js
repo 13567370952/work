@@ -31,20 +31,23 @@ function xbqh(){
 		$(this).parent().parent().find(".a").html($(this).html());
 	});
 	$(".cz .sc").bind("click",function(){
-		 $(this).parents("tbody").remove();
+		 $(this).parents("tr").remove();
 		 px();
 	})
 	$(".cz .tj").bind("click",function(){
-		$(this).parents("tbody").after($(this).parents("tbody").clone(true));
+		$(this).parents("tr").after($(this).parents("tr").clone(true));
 		px();
 	});
 	$("body").bind("click",function(){
 		$("body .xb h3").css({"display":"none"});
 		$("body .xb ul").css({"display":"none"});
 	})
+	$("input:text").click(function(){
+		$(this).select();
+	})
 }
 function px() {
-		$("tbody").each(function(index) {
-			$("tbody .xh").eq(index).html(index+1);
+		$("tr").each(function(index) {
+			$("tr .xh").eq(index).html(index+1);
 		});
 }
