@@ -1,6 +1,8 @@
-var radius= 8;
-var ml = 10;
+var radius=10;
+var ml;
 var mt = 10;
+var ww;
+var wh;
 const endTime = new Date(2016,3,26,18,04,45);//截止时间 月份是从0开始的
 var curSeconds = 0;
 var balls = [];
@@ -10,7 +12,14 @@ var oldhours;
 var oldMintues;
 var oldSeconds;
 window.onload = function(){
+	ww = document.body.clientWidth;
+	wh = document.body.clientHeight; 
+	ml  = Math.round(ww/10);
+	 radius = Math.round(ww*4/5/108)-1;
 	var canvas = document.getElementById('canvas');
+	canvas.width =ww;
+	canvas.height = wh;
+	console.log(canvas.height);
 	var context = canvas.getContext("2d");
 	setInterval(function(){
 		render(context);
@@ -25,21 +34,20 @@ function updateBalls(){
 		balls[i].x+=balls[i].vx;
 		balls[i].y+=balls[i].vy;
 		balls[i].vy+=balls[i].g;
-		if(balls[i].y>=768-radius){
-			balls[i].y=768-radius;
+		if(balls[i].y>=wh-radius){
+			balls[i].y=wh-radius;
 			balls[i].vy = -balls[i].vy*0.75;
 		}
 	}
 	var cnt = 0;
 	for (var i = 0; i < balls.length; i++) {
-		if(balls[i].x+radius>0&&balls[i].x-radius<1024){
+		if(balls[i].x+radius>0&&balls[i].x-radius<ww){
 			balls[cnt++]=balls[i];
 		}
 	}
 	while(balls.length>Math.min(300,cnt)){
 		balls.pop();
 	}
-	console.log(balls.length);
 }
 function getcurSeconds(){
 	var curTime = new Date();
@@ -48,7 +56,7 @@ function getcurSeconds(){
 	return ret > 0 ? ret : 0;
 }
 function render(cxt) {
-	cxt.clearRect(0,0,1024,768);
+	cxt.clearRect(0,0,ww,wh);
 	curSeconds = getcurSeconds();
 	if(one == 1){
 		 hours =parseInt(curSeconds/3600);
