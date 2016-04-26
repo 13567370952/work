@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>一个矩形绘制函数</title>
+</head>
+<body>
+	<canvas id="canvas" style="margin: 50px auto;display: block;border: 1px solid #ccc"></canvas>
+	<script type="text/javascript">
+	 	window.onload = function () {
+	 		var canvas = document.getElementById('canvas');
+			var context = canvas.getContext("2d");
+			canvas.width = 800;
+			canvas.height = 800;
+			drawRect(context,200,200,200,200,10,"red","#f60");
+			drawRect(context,300,300,200,200,10,"red","rgba(0,265,0,0.5)");
+	 	}
+	 	function drawRect(cxt,x,y,rectWidth,rectHeight,borderWidth,borderColor,fillColor){
+	 		cxt.beginPath();
+	 		cxt.rect(x,y,rectWidth,rectHeight);
+	 		cxt.closePath();
+	 		cxt.lineWidth = borderWidth;
+	 		cxt.strokeStyle = borderColor;
+	 		cxt.fillStyle = fillColor;
+	 		cxt.fill();
+	 		cxt.stroke();
+	 	}
+	 	function drawRect2(cxt,x,y,rectWidth,rectHeight,borderWidth,borderColor,fillColor){
+	 		cxt.lineWidth = borderWidth;
+	 		cxt.fillStyle = fillColor;
+	 		cxt.strokeStyle = borderColor;
+	 		cxt.fillRect(x,y,rectWidth,rectHeight);
+	 		cxt.strokeRect(x,y,rectWidth,rectHeight);
+	 	}
+	</script>
+</body>
+</html>
