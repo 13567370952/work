@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>图形变换和状态保存</title>
+</head>
+<body>
+	<canvas id="canvas" style="border:1px solid #ccc;display: block;margin: 50px auto"></canvas>
+	<script type="text/javascript">
+	window.onload = function () {
+		var canvas = document.getElementById('canvas');
+		var context = canvas.getContext("2d");
+		canvas.width = 800;
+		canvas.height = 800;
+		context.save();
+		context.fillStyle = "red";
+		context.translate(100,100);
+		context.fillRect(0,0,400,400);
+		context.restore();
+		context.save();
+		context.fillStyle = "green";
+		context.translate(300,300);
+		context.fillRect(0,0,400,400);
+		context.restore();
+	}
+	</script>
+</body>
+</html>
