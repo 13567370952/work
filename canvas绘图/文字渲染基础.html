@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>文字渲染基础</title>
+</head>
+<body>
+	<canvas id="canvas" style="border:1px solid #ccc;display: block;margin: 50px auto"></canvas>
+	<script type="text/javascript">
+	window.onload = function () {
+		var canvas = document.getElementById('canvas');
+		var context = canvas.getContext("2d");
+		canvas.width = 800;
+		canvas.height = 800;
+		context.font = "bold 40px Arial";
+		context.fillStyle = "#058";
+		context.fillText("欢迎大家",40,100);
+		context.lineWidth = 1;
+		context.strokeStyle = "#058";
+		context.strokeText("欢迎大家",40,200,50);
+		var linearGrad = context.createLinearGradient(0,0,800,0);
+		linearGrad.addColorStop(0.0,"red");
+		linearGrad.addColorStop(0.25,"orange");
+		linearGrad.addColorStop(0.5,"yellow");
+		linearGrad.addColorStop(0.75,"green");
+		linearGrad.addColorStop(1.0,"purple");
+		context.fillStyle = linearGrad;
+		context.fillText("欢迎大家来到慕课网学习！",40,500);
+		var backgroundImage = new Image();
+		backgroundImage.src = "img.png";
+		backgroundImage.onload = function (){
+			var pattern = context.createPattern(backgroundImage,"repeat");
+			context.fillStyle = pattern;
+			context.font = "bold 100px Arial";
+			context.fillText("Canvas",40,650);
+			context.strokeText("Canvas",40,650);
+		}
+	} 
+	</script>
+</body>
+</html>

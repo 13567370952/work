@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>arcTo另一种弧线绘制方法</title>
+</head>
+<body>
+	<canvas id="canvas" style="border:1px solid #ccc;display: block;margin: 50px auto"></canvas>
+	<script type="text/javascript">
+	window.onload = function () {
+		var canvas = document.getElementById('canvas');
+		var context = canvas.getContext("2d");
+		canvas.width = 800;
+		canvas.height = 800;
+		//arcTo(x1,y1,x2,y2,r);
+		context.beginPath();
+		context.moveTo(150,150);
+		context.arcTo(650,150,650,650,300);
+		context.lineWidth = 6;
+		context.strokeStyle = "red";
+		context.stroke();
+		//绘制辅线
+		context.beginPath();
+		context.moveTo(150,150);
+		context.lineTo(650,150);
+		context.lineTo(650,650);
+		context.lineWidth =2;
+		context.strokeStyle = "gray";
+		context.stroke();
+	} 
+	</script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>圆角矩形优化//2048棋盘格</title>
+</head>
+<body>
+	<canvas id="canvas" style="border:1px solid #ccc;display: block;margin: 50px auto"></canvas>
+	<script type="text/javascript">
+	window.onload = function () {
+		var canvas = document.getElementById('canvas');
+		var context = canvas.getContext("2d");
+		canvas.width = 800;
+		canvas.height = 800;
+		fillRoundRect(context,150,150,500,500,10,"#bbada0");
+		for(var i = 0 ;i<4;i++){
+			for(var j = 0;j<4;j++)
+			fillRoundRect(context,170+i*120,170+j*120,100,100,6,"#ccc0b3")
+		}	
+	} 
+	function fillRoundRect(cxt,x,y,width,height,r,fillColor){
+		if(2*r>width||2*r>height)
+			return;
+		cxt.save();
+		cxt.translate(x,y);
+		pathRoundRect(cxt,width,height,r);
+		cxt.fillStyle = fillColor||"black";
+		cxt.fill();
+		cxt.restore();
+	}
+	function strokeRoundRect(cxt,x,y,width,height,r,lineWidth,strokeColor){
+		if(2*r>width||2*r>height){
+			return;
+		}
+		cxt.save();
+		cxt.translate(x,y);
+		pathRoundRect(cxt,width,height,r);
+		cxt.lineWidth = lineWidth||1;
+		cxt.strokeStyle = strokeColor||"black";
+		cxt.stroke();
+		cxt.restore();
+	}
+	// function drawRoundRect(cxt,x,y,width,height,r){
+	// 	cxt.save();
+	// 	cxt.translate(x,y);
+	// 	pathRoundRect(cxt,width,height,r);
+	// 	cxt.strokeStyle = "red";
+	// 	cxt.stroke();
+	// 	cxt.restore();
+	// }
+	function pathRoundRect(cxt,width,height,r){
+		cxt.beginPath();
+		cxt.arc(width-r,height-r,r,0*Math.PI,0.5*Math.PI);
+		cxt.lineTo(r,height);
+		cxt.arc(r,height-r,r,0.5*Math.PI,1*Math.PI);
+		cxt.lineTo(0,r);
+		cxt.arc(r,r,r,1*Math.PI,1.5*Math.PI);
+		cxt.lineTo(width-r,0);
+		cxt.arc(width-r,r,r,1.5*Math.PI,2*Math.PI);
+		cxt.closePath();
+	}
+	</script>
+</body>
+</html>
