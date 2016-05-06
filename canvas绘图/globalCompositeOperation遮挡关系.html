@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>globalCompositeOperation遮挡关系</title>
+</head>
+<body>
+	<canvas id="canvas" style="border:1px solid #ccc;display: block;margin: 50px auto"></canvas>
+	<script type="text/javascript">
+	window.onload = function () {
+		var canvas = document.getElementById('canvas');
+		var context = canvas.getContext("2d");
+		canvas.width = 800;
+		canvas.height = 800;
+		context.fillStyle = "blue";
+		context.fillRect(100,200,400,400);
+		context.globalCompositeOperation = "destination-over"
+		// context.globalCompositeOperation = "source-over";
+		context.fillStyle = "red";
+		context.beginPath();
+		context.moveTo(400,300);
+		context.lineTo(650,700);
+		context.lineTo(150,700);
+		context.closePath();
+		context.fill();
+	}
+	</script>
+</body>
+</html>

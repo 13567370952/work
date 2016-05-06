@@ -12,11 +12,17 @@
 		var context = canvas.getContext("2d");
 		canvas.width = 800;
 		canvas.height = 800;
+		context.save();
 		context.fillStyle = "#058";
 		context.font = "bold 120px sans-serif";
 		context.textAlign = "center";
 		context.textBaseline = "maddle";
+		context.shadowColor = "gray";
+		context.shadowOffsetX = 10;
+		context.shadowOffsetY = 10;
+		context.shadowBlur = 5;
 		context.fillText("CANVAS",canvas.width/2,canvas.height/2);
+		context.restore();
 		context.strokeStyle = "#888";
 		context.moveTo(0,canvas.height/2);
 		context.lineTo(canvas.width,canvas.height/2);

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>探照灯效果</title>
+</head>
+<body>
+	<canvas id="canvas" style="border:1px solid #ccc;display: block;margin: 50px auto"></canvas>
+	<script type="text/javascript">
+	var searchLight={x:400,y:400,radius:150,vx:Math.random()*5+10,vy:Math.random()*5+10}
+	window.onload = function () {
+		var canvas = document.getElementById('canvas');
+		var context = canvas.getContext("2d");
+		canvas.width = 800;
+		canvas.height = 800;
+		setInterval(function(){
+			draw(context);
+			update(canvas.width,canvas.height);
+		},40);
+	}
+	function draw(cxt){
+		var canvas = cxt.canvas;
+		cxt.clearRect(0,0,canvas.width,canvas.height);
+		cxt.save();
+		cxt.beginPath();
+		cxt.fillStyle = "black";
+		cxt.fillRect(0,0,canvas.width,canvas.height);
+		cxt.beginPath();
+		cxt.arc(searchLight.x,searchLight.y,searchLight.radius,0,Math.PI*2);
+		cxt.fillStyle = "#fff";
+		cxt.fill();
+		cxt.clip();
+		cxt.font = "bold 150px Arial";
+		cxt.textAlign = "center";
+		cxt.textBaseline = "middle";
+		cxt.fillStyle = "#058";
+		cxt.fillText("canvas",canvas.width/2,canvas.height/4);
+		cxt.fillText("canvas",canvas.width/2,canvas.height/2);
+		cxt.fillText("canvas",canvas.width/2,canvas.height*3/4);
+		cxt.restore();
+	}
+	function update(canvasWidth,canvasHeight){
+		searchLight.x+=searchLight.vx;
+		searchLight.y+=searchLight.vy;
+		if((searchLight.x-searchLight.radius)<=0){
+			searchLight.vx = -searchLight.vx;
+		}
+		if((searchLight.x+searchLight.radius)>=canvasWidth){
+			searchLight.vx = -searchLight.vx;
+		}
+		if((searchLight.y+searchLight.radius)>=canvasHeight){
+			searchLight.vy = -searchLight.vy;
+		}
+		if((searchLight.y-searchLight.radius)<=0){
+			searchLight.vy = -searchLight.vy;
+		}
+	}
+	</script>
+</body>
+</html>

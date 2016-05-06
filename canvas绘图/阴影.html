@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>文本的度量</title>
+	<title>阴影</title>
 </head>
 <body>
 	<canvas id="canvas" style="border:1px solid #ccc;display: block;margin: 50px auto"></canvas>
@@ -13,10 +13,11 @@
 		canvas.width = 800;
 		canvas.height = 800;
 		context.fillStyle = "#058";
-		context.font  = "bold 40px sans-serif";
-		context.fillText("欢迎大家学习Canvas",40,100);
-		var textWidth = context.measureText("欢迎大家学习Canvas").width;
-		context.fillText("以上字符串宽度是"+textWidth+"px",40,200);
+		context.shadowColor = "gray";
+		context.shadowOffsetX = 5;
+		context.shadowOffsetY = 5;
+		context.shadowBlur = 30;
+		context.fillRect(200,200,400,400);
 	} 
 	</script>
 </body>
