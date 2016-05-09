@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>使用drawImage绘制图像</title>
+</head>
+<body>
+	<canvas id="canvas" style="border:1px solid #ccc;display: block;margin: 50px auto"></canvas>
+	<script type="text/javascript">
+	var canvas = document.getElementById('canvas');
+	var context = canvas.getContext("2d");
+	var image = new Image();
+	window.onload = function () {
+		canvas.width = 1152;
+		canvas.height = 768;
+		image.src = "img.jpg";
+		image.onload = function (){
+			context.drawImage(image,0,0);
+		}
+	}
+	</script>
+</body>
+</html>

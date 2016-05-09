@@ -3,12 +3,76 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Canvas中使用其它HTML元素</title>
+	<style type="text/css">
+		body,div{
+			padding: 0px;
+			margin: 0px;
+		}
+		a{
+			text-decoration: none;
+		}
+		#canvas-warpper{
+			width: 1200px;
+			margin: 0 auto;
+			position: relative;
+		}
+		#controller{
+			position: absolute;
+			top:30px;
+			left: 30px;
+			background-color: rgba(0,85,116,0.7);
+			padding: 5px 20px 25px 20px;
+			border-radius: 10px;
+		}
+		#controller h1{
+			color: white;
+			font-family:"微软雅黑";
+		}
+		#controller #canvas-btn{
+			display: inline-block;
+			background-color: #8b0;
+			color: white;
+			font-size: 14px;
+			padding: 5px 15px;
+			border-radius: 6px;
+			margin-top: 10px;
+			margin-right: 20px;
+		}
+		#controller #canvas-btn:hover{
+			background-color: #7a0;
+		}
+		#controller .color-btn{
+			display: inline-block;
+			padding: 5px 15px;
+			border-radius: 6px;
+			font-size: 14px;
+			margin-top: 10px;
+			margin-right: 5px;
+		}
+		#controller #white-color-btn{
+			background-color: white;
+		}
+		#controller #black-color-btn{
+			background-color: black;
+		}
+	</style>
 </head>
+<script type="text/javascript" src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
 <body>
-	<canvas id="canvas" style="border:1px solid #ccc;display: block;margin: 50px auto"></canvas>
+	<div id="canvas-warpper">
+		<canvas id="canvas" style="border:1px solid #ccc;display: block;margin: 50px auto"></canvas>
+		<div id = "controller">
+			<h1>Canvas 绘图之旅</h1>
+			<a href="#" id = "canvas-btn">停止运动</a>
+			<a href="#" class="color-btn" id ="white-color-btn">&nbsp</a>
+			<a href="#" class="color-btn" id ="black-color-btn">&nbsp</a>
+		</div>
+	</div>
 	<script type="text/javascript">
 	var balls=[];
 	var aBall;
+	var start = true;
+	var backcolor = "black";
 	window.onload = function () {
 		var canvas = document.getElementById('canvas');
 		var context = canvas.getContext("2d");
@@ -32,15 +96,35 @@
 			balls[i] = aBall;
 		}
 		setInterval(function(){
-			draw(context);
-			update(canvas.width,canvas.height);
-		},50)
+			if(start){
+				draw(context);
+				update(canvas.width,canvas.height);
+			}
+		},50);
+		$("#canvas-btn").bind("click",function(){
+			$this=$(this);
+			if(start){
+				start=false;
+				$this.text("开始运动");
+			}else{
+				start=true;
+				$this.text("停止运动");
+			}
+		})
+		$("#white-color-btn").bind("click",function(){
+			backcolor = "white";
+		})
+		$("#black-color-btn").bind("click",function(){
+			backcolor = "black";
+		})
 	}
 	function draw(cxt){
 		var canvas = cxt.canvas;
 		cxt.clearRect(0,0,canvas.width,canvas.height);
+		cxt.fillStyle = backcolor;
+		cxt.fillRect(0,0,canvas.width,canvas.height);
 		for(var i = 0;i<balls.length;i++){
-			cxt.globalCompositeOperation = "xor";
+			// cxt.globalCompositeOperation = "xor";
 			cxt.fillStyle = balls[i].color;
 			cxt.beginPath();
 			cxt.arc(balls[i].x,balls[i].y,balls[i].radius,0,Math.PI*2);
