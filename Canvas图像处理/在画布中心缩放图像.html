@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>使用drawImage绘制的参数</title>
+	<title>在画布中心缩放图像</title>
 </head>
-<body>
+<body style="background: black">
 	<canvas id="canvas" style="border:1px solid #ccc;display: block;margin: 50px auto"></canvas>
+	<input type="range" style="display: block;margin: 20px auto;width: 800px;"></input>
 	<script type="text/javascript">
 	var canvas = document.getElementById('canvas');
 	var context = canvas.getContext("2d");
@@ -13,10 +14,10 @@
 	window.onload = function () {
 		canvas.width = 800;
 		canvas.height = 800;
-		image.src = "img.jpg";
+		image.src = "img-lg.jpg";
 		image.onload = function (){
 			// context.drawImage(image,0,0,canvas.width,canvas.height);
-			context.drawImage(image,600,200,400,400,0,0,canvas.width,canvas.height);
+			context.drawImage(image,0,0,canvas.width,canvas.height);
 		}
 	}
 	</script>
