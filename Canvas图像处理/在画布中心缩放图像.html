@@ -6,20 +6,81 @@
 </head>
 <body style="background: black">
 	<canvas id="canvas" style="border:1px solid #ccc;display: block;margin: 50px auto"></canvas>
-	<input type="range" style="display: block;margin: 20px auto;width: 800px;"></input>
-	<script type="text/javascript">
+	<input type="range" id = "scale-range" min="0.5" max="3.0" step="0.01" value="2" style="display: block;margin: 20px auto;width: 800px;">
+</input>
+<script type="text/javascript">
 	var canvas = document.getElementById('canvas');
 	var context = canvas.getContext("2d");
 	var image = new Image();
+	var slider = document.getElementById('scale-range');
+	var dx;
+	var dy;
+	var dangX;
+	var dangY;
+	var dt;
+	var dq;
+	var scale = slider.value;
+	var bindremove = true;
+	var cis = true
 	window.onload = function () {
-		canvas.width = 800;
-		canvas.height = 800;
+		canvas.width = 1152;
+		canvas.height = 768;
 		image.src = "img-lg.jpg";
 		image.onload = function (){
-			// context.drawImage(image,0,0,canvas.width,canvas.height);
-			context.drawImage(image,0,0,canvas.width,canvas.height);
+			drawIamgeByScale(scale);
+			slider.onmousemove = function(){
+				scale = slider.value;
+				drawIamgeByScale(scale);
+			}
+		}
+		canvas.addEventListener("click",clickremove)
+	}
+	function clickremove(){
+		if((bindremove&&cis)||doubi){
+			canvas.addEventListener("mousemove",detect);
+			dangX = event.clientX - canvas.getBoundingClientRect().left;
+			dangY = event.clientY - canvas.getBoundingClientRect().top;
+			cis = false;
+			doubi = false;
+			return false;
+		}
+		else{
+			bindremove=false;
+			doubi = true;
+			return false;
+			// dx = dt;
+			// dy = dq;
 		}
 	}
-	</script>
+	function drawIamgeByScale(scale){
+		var imageWidth = 1152*scale;
+		var imageHeight = 768*scale;
+		// var sx = imageWidth/2-canvas.width/2;
+		// var sy = imageHeight/2-canvas.height/2;
+		// context.drawImage(image,sx,sy,canvas.width,canvas.height,0,0,canvas.width,canvas.height);
+		// console.log(sx+""+sy);
+		dx = canvas.width/2-imageWidth/2;
+		dy = canvas.height/2-imageHeight/2;
+		context.clearRect(0,0,canvas.width,canvas.height);
+		context.drawImage(image,dx,dy,imageWidth,imageHeight);
+	} 
+	function detect(event){
+		if(bindremove||doubi==false){
+			var x = event.clientX - canvas.getBoundingClientRect().left;
+			var y = event.clientY - canvas.getBoundingClientRect().top;
+			dt = dx+(x-dangX);
+			dq = dy+(y-dangY);
+			var imageWidth = 1152*scale;
+			var imageHeight = 768*scale;
+		// dx = canvas.width/2-imageWidth/2;
+		// dy = canvas.height/2-imageHeight/2;
+		context.clearRect(0,0,canvas.width,canvas.height);
+		context.drawImage(image,dt,dq,imageWidth,imageHeight);
+	}else{
+		dx = dt;
+		dy = dq;
+	}
+}
+</script>
 </body>
 </html>
