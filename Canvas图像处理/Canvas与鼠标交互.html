@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Canvas与鼠标交互</title>
+</head>
+<body>
+	<canvas id="canvas" style="border:1px solid #ccc;display: block;margin: 50px auto"></canvas>
+	<script type="text/javascript">
+	var canvas = document.getElementById('canvas');
+	var context = canvas.getContext("2d");
+	var image = new Image();
+	var isMouseDown  = false;
+	window.onload = function () {
+		canvas.width = 1152;
+		canvas.height = 768;
+		image.src = "img.jpg";
+		image.onload = function (){
+			context.drawImage(image,0,0);
+		}
+	}
+	function windowToCanvas(x,y){
+		var bbox = canvas.getBoundingClientRect();
+		return {x:x-bbox.left,y:y-bbox.top}
+	}
+	canvas.onmousedown = function (e){
+		e.preventDefault(); 
+		var point = windowToCanvas(e.clientX,e.clientY);
+		isMouseDown = true;
+	}
+	canvas.onmousemove = function(e){
+		e.preventDefault(); 
+		if(isMouseDown){
+			var point = windowToCanvas(e.clientX,e.clientY);
+			console.log(point.x,point.y);
+		}
+	}
+	canvas.onmouseup = function(e){
+		e.preventDefault();
+		isMouseDown = false; 
+	}
+	canvas.onmouseout = function (e){
+		e.preventDefault(); 
+		isMouseDown = false; 
+	}
+	</script>
+</body>
+</html>
