@@ -3,7 +3,7 @@ var ml;
 var mt = 10;
 var ww;
 var wh;
-const endTime = new Date(2016,3,26,18,04,45);//截止时间 月份是从0开始的
+const endTime = new Date(2016,4,12,18,04,45);//截止时间 月份是从0开始的
 var curSeconds = 0;
 var balls = [];
 var colors = ["#33B5E5","#0099CC","#AA66CC","#9933CC","#99CC00","#669900","#FFBB33","#FF8800","#FF4444","#CC0000"];
@@ -15,11 +15,10 @@ window.onload = function(){
 	ww = document.body.clientWidth;
 	wh = document.body.clientHeight; 
 	ml  = Math.round(ww/10);
-	 radius = Math.round(ww*4/5/108)-1;
+	radius = Math.round(ww*4/5/108)-1;
 	var canvas = document.getElementById('canvas');
 	canvas.width =ww;
 	canvas.height = wh;
-	console.log(canvas.height);
 	var context = canvas.getContext("2d");
 	setInterval(function(){
 		render(context);
@@ -45,7 +44,7 @@ function updateBalls(){
 			balls[cnt++]=balls[i];
 		}
 	}
-	while(balls.length>Math.min(300,cnt)){
+	while(balls.length>Math.min(500,cnt)){
 		balls.pop();
 	}
 }
