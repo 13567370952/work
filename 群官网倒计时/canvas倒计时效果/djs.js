@@ -1,9 +1,9 @@
 var radius=10;
 var ml;
-var mt = 10;
+var mt=0;
 var ww;
 var wh;
-const endTime = new Date(2016,4,12,18,04,45);//截止时间 月份是从0开始的
+const endTime = new Date(2016,4,13,19,04,45);//截止时间 月份是从0开始的
 var curSeconds = 0;
 var balls = [];
 var colors = ["#33B5E5","#0099CC","#AA66CC","#9933CC","#99CC00","#669900","#FFBB33","#FF8800","#FF4444","#CC0000"];
@@ -11,6 +11,7 @@ var one =1;
 var oldhours;
 var oldMintues;
 var oldSeconds;
+var ballsx = []
 window.onload = function(){
 	ww = document.body.clientWidth;
 	wh = document.body.clientHeight; 
@@ -24,6 +25,14 @@ window.onload = function(){
 		render(context);
 		upDate();
 	},50);
+	ctblue(context);
+}
+function ctblue(cxt){
+	var linearGrad  = cxt.createLinearGradient(0,0,0,cxt.canvas.height);
+	linearGrad.addColorStop(0.0,"#C8E9DB");
+	linearGrad.addColorStop(1.0,"#51A3C5");
+	cxt.fillStyle = linearGrad;
+	cxt.fillRect(0,0,cxt.canvas.width,cxt.canvas.height);
 }
 function upDate(){
 	updateBalls();
@@ -56,6 +65,7 @@ function getcurSeconds(){
 }
 function render(cxt) {
 	cxt.clearRect(0,0,ww,wh);
+	ctblue(cxt);
 	curSeconds = getcurSeconds();
 	if(one == 1){
 		 hours =parseInt(curSeconds/3600);
