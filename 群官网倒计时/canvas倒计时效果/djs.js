@@ -135,7 +135,8 @@ function render(cxt) {
 	}
 	renderDigit(ml,mt,parseInt(days/10),cxt);
 	renderDigit(ml+15*(radiusx+1),mt,parseInt(days%10),cxt);
-	drawwz(ml+30*(radiusx+1),mt+18*(radiusx+1),cxt)
+	// drawwz(ml+30*(radiusx+1),mt+18*(radiusx+1),cxt)
+	renderDigit(ml+30*(radiusx+1),mt,11,cxt)
 	renderDigit(ml+55*(radiusx+1),mt,parseInt(hours/10),cxt)
 	renderDigit(ml+70*(radiusx+1),mt,parseInt(hours%10),cxt)
 	renderDigit(ml+85*(radiusx+1),mt,10,cxt)
@@ -163,13 +164,17 @@ function addBalls(x,y,num){
 	for(var i = 0;i<digit[num].length;i++){
 		for(var j = 0;j<digit[num][i].length;j++){
 			if(digit[num][i][j] == 1){
+				var R = Math.floor(Math.random()*225);
+				var G = Math.floor(Math.random()*225);
+				var B = Math.floor(Math.random()*225);
 				var aBall ={
 					x:x+j*2*(radiusx+1)+(radiusx+1),
 					y:y+i*2*(radiusx+1)+(radiusx+1),
 					g:1.5+Math.random(),
 					vx:Math.pow(-1,Math.ceil(Math.random()*1000))*4,
 					vy:-5,
-					color:colors[Math.floor(Math.random()*colors.length)]
+					// color:colors[Math.floor(Math.random()*colors.length)]
+					color:"rgba("+R+","+G+","+B+","+1+")",
 				}
 				ballsx.push(aBall);
 			}

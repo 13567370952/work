@@ -10,8 +10,10 @@ function newgame(){
 function init(){
 	for(var i = 0;i<4;i++){
 		for(var j = 0;j<4;j++){
-			var girdCell = $("#gird-cell-"+"i"+"-"+"j");
+			var girdCell = $("#grid-cell-"+i+"-"+j);
 			
+			girdCell.css({"left":getPosLeft(i,j)});
+			girdCell.css({"top":getPosTop(i,j)});
 		}
 	}
 }
