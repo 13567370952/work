@@ -9,5 +9,11 @@ function showNumberWithAnimation(i,j,randNumber){
 		top:getPosTop(i,j),
 		left:getPosLeft(i,j)
 	},50);
-	console.log("show函数");
+}
+function showMoveAnimation(fromx,fromy,tox,toy){
+	var numberCell = $("#number-cell-"+fromx+"-"+fromy);
+	numberCell.animate({
+		top: getPosTop(tox,toy),
+		param2:getPosLeft(tox,toy)
+	},200);
 }

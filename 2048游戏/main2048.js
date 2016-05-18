@@ -57,11 +57,9 @@ function updataBoardView(){
 	}
 }
 function generateOneNumber(){
-	if(nospace(board)){
-		console.log("a");
+	if(false){
 		return false;
 	}else{
-		console.log("a");
 		//随机一个位置,随机一个数
 		var  randx = parseInt(Math.floor(Math.random()*4));
 		var  randy = parseInt(Math.floor(Math.random()*4));
@@ -76,13 +74,15 @@ function generateOneNumber(){
 		var randNumber = Math.random()<0.5?2:4;
 		board[randx][randy] = randNumber;
 		showNumberWithAnimation(randx,randy,randNumber);
+		console.log(randx,randy);
 		return true;
 	}
 }
-$(document).keydown(function(event)){
+$(document).keydown(function(event){
 	switch(event.keyCode){
 		case 37://LEFT
 			if (moveLeft()) {
+				console.log("left");
 				generateOneNumber();
 				isgameover();
 			}
@@ -108,4 +108,37 @@ $(document).keydown(function(event)){
 		default:
 			break;
 	}
-};
+})
+function isgameover(){
+
+}
+function moveLeft(){
+	if(!canMoveLeft(board)){
+		return false;
+	}else{
+		for(var i = 0;i<4;i++){
+			for(var j = 1;j<4;j++){
+				if(board[i][j]!=0){
+					for(var k = 0 ;k<j;k++){
+						if(board[i][k]==0 && onBlockHorizontal(i,k,j,board)){
+							//move
+							showMoveAnimation(i,j,i,k);
+							board[i][k] = board[i][j];
+							board[i][j] = 0;
+							continue;
+						}else if(board[i][k]== board[i][j]&&onBlockHorizontal(i,k,j,board)){
+							//move
+							showMoveAnimation(i,j,i,k);
+							//add
+							board[i][k] += board[i][j];
+							board[i][j] = 0;
+							continue;
+						}
+					}
+				}
+			}
+		}
+		updataBoardView();
+		return true;
+	}
+}
