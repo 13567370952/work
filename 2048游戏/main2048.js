@@ -6,6 +6,9 @@ $(document).ready(function(){
 function newgame(){
 	//初始化棋盘格
 	init();
+	//随机两个生成两个数字
+	generateOneNumber();
+	generateOneNumber();
 }
 function init(){
 	for(var i = 0;i<4;i++){
@@ -21,7 +24,7 @@ function init(){
 	for(var i = 0;i<4;i++){
 		board[i] = new Array();
 		for(var j = 0;j<4;j++){
-			board[i][j] =128;
+			board[i][j] =0;
 		}
 	}
 	updataBoardView();
@@ -53,3 +56,56 @@ function updataBoardView(){
 		}
 	}
 }
+function generateOneNumber(){
+	if(nospace(board)){
+		console.log("a");
+		return false;
+	}else{
+		console.log("a");
+		//随机一个位置,随机一个数
+		var  randx = parseInt(Math.floor(Math.random()*4));
+		var  randy = parseInt(Math.floor(Math.random()*4));
+		while(true){
+			if(board[randx][randy]==0){
+				break;
+			}else{
+				randx = parseInt(Math.floor(Math.random()*4));
+		        randy = parseInt(Math.floor(Math.random()*4));
+			}
+		}
+		var randNumber = Math.random()<0.5?2:4;
+		board[randx][randy] = randNumber;
+		showNumberWithAnimation(randx,randy,randNumber);
+		return true;
+	}
+}
+$(document).keydown(function(event)){
+	switch(event.keyCode){
+		case 37://LEFT
+			if (moveLeft()) {
+				generateOneNumber();
+				isgameover();
+			}
+			break;
+		case 38://up
+			if (moveUp()) {
+				generateOneNumber();
+				isgameover();
+			}
+			break;
+		case 39://right
+			if (moveRight()) {
+				generateOneNumber();
+				isgameover();
+			}
+			break;
+		case 40://down
+			if (moveDown()) {
+				generateOneNumber();
+				isgameover();
+			}
+			break;
+		default:
+			break;
+	}
+};

@@ -29,3 +29,15 @@ function getNumberColor(number){
 		return "white";
 	}
 }
+function nospace(board){
+	for (var i = 0;i<4;i++){
+		for(var j = 0;j<4;j++){
+			if (board[i][j]==0) {
+				console.log("nospace");
+				return false;
+			}else{
+				return true;
+			}
+		}
+	}
+}
