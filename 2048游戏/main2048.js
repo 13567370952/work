@@ -108,10 +108,12 @@ $(document).keydown(function(event){
 	}
 })
 function isgameover(){
-
+	if(nomove(board)){
+		gameover();
+	}
 }
 function gameover(){
-	
+	console.log("gameover")
 }
 function moveDown(){
 	if(!canMoveDown(board)){
@@ -129,6 +131,8 @@ function moveDown(){
 						}else if(board[k][j] == board[i][j]&&onBlockHorizontalY(i,k,j,board)){
 							showMoveAnimation(i,j,k,j);
 							board[k][j] += board[i][j];
+							score+=board[i][j];
+							updateScore(score)
 							board[i][j]=0;
 						}
 					}
@@ -155,7 +159,10 @@ function moveUp(){
 						}else if(board[k][j] == board[i][j]&&onBlockHorizontalY(k,i,j,board)){
 							showMoveAnimation(i,j,k,j);
 							board[k][j] += board[i][j];
+							score+=board[i][j];
+							updateScore(score);
 							board[i][j]=0;
+							continue;
 						}
 					}
 				}
@@ -181,6 +188,8 @@ function moveRight(){
 					}else if(board[i][k]== board[i][j]&&onBlockHorizontal(i,j,k,board)){
 						showMoveAnimation(i,j,i,k);
 						board[i][k] += board[i][j];
+						score+=board[i][j];
+						updateScore(score);
 						board[i][j] = 0;
 						continue;
 					}
@@ -211,6 +220,8 @@ function moveLeft(){
 							showMoveAnimation(i,j,i,k);
 							//add
 							board[i][k] += board[i][j];
+							score+=board[i][j];
+							updateScore(score);
 							board[i][j] = 0;
 							continue;
 						}

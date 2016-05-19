@@ -106,3 +106,10 @@ function onBlockHorizontalY(cell1,cell2,row,board){
 	}
 	return true;
 }
+function nomove(board){
+	if(canMoveRight(board)||canMoveLeft(board)||canMoveUp(board)||canMoveDown(board)){
+		return false;
+	}else{
+		return true;
+	}
+}
