@@ -74,7 +74,6 @@ function generateOneNumber(){
 		var randNumber = Math.random()<0.5?2:4;
 		board[randx][randy] = randNumber;
 		showNumberWithAnimation(randx,randy,randNumber);
-		console.log(randx,randy);
 		return true;
 	}
 }
@@ -82,7 +81,6 @@ $(document).keydown(function(event){
 	switch(event.keyCode){
 		case 37://LEFT
 			if (moveLeft()) {
-				console.log("left");
 				generateOneNumber();
 				isgameover();
 			}
@@ -112,6 +110,88 @@ $(document).keydown(function(event){
 function isgameover(){
 
 }
+function gameover(){
+	
+}
+function moveDown(){
+	if(!canMoveDown(board)){
+		return false;
+	}else{
+		for(var i=2;i>=0;i--){
+			for(var j=0;j<4;j++){
+				if(board[i][j]!=0){
+					for(var k=3;k>i;k--){
+						if(board[k][j] == 0&&onBlockHorizontalY(i,k,j,board)){
+							showMoveAnimation(i,j,k,j);
+							board[k][j] = board[i][j];
+							board[i][j] = 0;
+							continue;
+						}else if(board[k][j] == board[i][j]&&onBlockHorizontalY(i,k,j,board)){
+							showMoveAnimation(i,j,k,j);
+							board[k][j] += board[i][j];
+							board[i][j]=0;
+						}
+					}
+				}
+			}
+		}
+		setTimeout("updataBoardView()",200 );
+		return true;
+	}
+}
+function moveUp(){
+	if(!canMoveUp(board)){
+		return false;
+	}else{
+		for(var i = 1;i<4;i++){
+			for(var j = 0;j<4;j++){
+				if(board[i][j]!=0){
+					for(var k = 0 ;k<i;k++){
+						if(board[k][j]==0&&onBlockHorizontalY(k,i,j,board)){
+							showMoveAnimation(i,j,k,j);
+							board[k][j] = board[i][j];
+							board[i][j] = 0;
+							continue;
+						}else if(board[k][j] == board[i][j]&&onBlockHorizontalY(k,i,j,board)){
+							showMoveAnimation(i,j,k,j);
+							board[k][j] += board[i][j];
+							board[i][j]=0;
+						}
+					}
+				}
+			}
+		}
+		setTimeout("updataBoardView()",200 );
+		return true;
+	}
+}
+function moveRight(){
+	if(!canMoveRight(board)){
+		return false;
+	}else{
+		for(var i = 0;i<4;i++){
+			for(var j=2;j>=0;j--){
+				if(board[i][j]!=0){
+				for(var k = 3;k>j;k--){
+					if(board[i][k]==0&&onBlockHorizontal(i,j,k,board)){
+						showMoveAnimation(i,j,i,k);
+						board[i][k] = board[i][j];
+						board[i][j] = 0;
+						continue;
+					}else if(board[i][k]== board[i][j]&&onBlockHorizontal(i,j,k,board)){
+						showMoveAnimation(i,j,i,k);
+						board[i][k] += board[i][j];
+						board[i][j] = 0;
+						continue;
+					}
+				}
+			}
+			}
+		}
+		setTimeout("updataBoardView()",200 );
+		return true;
+	}
+}
 function moveLeft(){
 	if(!canMoveLeft(board)){
 		return false;
@@ -138,7 +218,7 @@ function moveLeft(){
 				}
 			}
 		}
-		updataBoardView();
+		setTimeout("updataBoardView()", 200 );
 		return true;
 	}
 }
