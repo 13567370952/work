@@ -4,8 +4,8 @@ function showNumberWithAnimation(i,j,randNumber){
 	numberCell.css("color",getNumberColor(randNumber));
 	numberCell.text(randNumber);
 	numberCell.animate({
-		width:cellSideLength+"px",
-		height:cellSideLength+"px",
+		width:"100px",
+		height:"100px",
 		top:getPosTop(i,j),
 		left:getPosLeft(i,j)
 	},50);

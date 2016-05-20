@@ -1,37 +1,9 @@
 var board = new Array();//4*4的格子
 var score = 0;//游戏分数
 var hasConfliced = new Array();
-//用于手机触控的变量
-var startx = 0;
-var starty = 0;
-var endx = 0;
-var endy = 0;
 $(document).ready(function(){
-	documentWidth = window.screen.availWidth;//当前设备可以使用的宽度
-	gridContainerWidth = 0.92*documentWidth;//游戏大方块的宽度
-	cellSideLength = 0.18*documentWidth;//每个小方块的宽度
-	cellSpace = 0.04*documentWidth;//间距
-	prepareForMobile();//移动端
 	newgame();
 })
-function prepareForMobile(){
-	if(documentWidth>500){
-		gridContainerWidth=500;
-		cellSideLength =100;
-		cellSpace = 20;
-	}
-	$("#grid-container").css({
-		"width":gridContainerWidth-2*cellSpace,
-		 "height":gridContainerWidth-2*cellSpace,
-		 "padding":cellSpace,
-		 "border-radius":gridContainerWidth*0.02
-	});
-	$(".grid-cell").css({
-		"width":cellSideLength,
-		"height":cellSideLength,
-		"border-radius":0.02*cellSideLength
-	})
-}
 function newgame(){
 	//初始化棋盘格
 	init();
@@ -70,13 +42,13 @@ function updataBoardView(){
 				theNumberCell.css({
 					width: '0px',
 					height: '0px',
-					top:getPosTop(i,j)+cellSideLength/2,
-					left:getPosLeft(i,j)+cellSideLength/2,
+					top:getPosTop(i,j)+50,
+					left:getPosLeft(i,j)+50,
 				});
 			}else{
 				theNumberCell.css({
-					width: cellSideLength,
-					height: cellSideLength,
+					width: '100px',
+					height: '100px',
 					top:getPosTop(i,j),
 					left:getPosLeft(i,j),
 					backgroundColor:getNumberBackgroundColor(board[i][j]),
@@ -86,10 +58,6 @@ function updataBoardView(){
 			}
 			hasConfliced[i][j] = false;
 		}
-		$(".number-cell").css({
-			"line-height":cellSideLength+"px",
-			"font-size":0.6*cellSideLength+"px"
-		});
 	}
 }
 function generateOneNumber(){
@@ -154,44 +122,7 @@ $(document).keydown(function(event){
 		default:
 			break;
 	}
-});
-//添加监听器
-document.addEventListener("touchstart",function(event){
-	startx =event.touches[0].pageX;
-	starty =event.touches[0].pageY;
-});
-document.addEventListener("touchend",function(event){
-	endx=event.changedTouches[0].pageX;
-	endy=event.changedTouches[0].pageY;
-	var deltax = endx - startx;
-	var deltay = endy - starty;
-	//x 
-	if(Math.abs(deltax)>=Math.abs(deltay)){
-		if (deltax>0) {
-			if (moveRight()) {
-				generateOneNumber();
-				isgameover();
-			}
-		}else{
-			if (moveLeft()) {
-				generateOneNumber();
-				isgameover();
-			}
-		}
-	}else{//y
-		if(deltay>0){
-			if (moveDown()) {
-				generateOneNumber();
-				isgameover();
-			}
-		}else{
-			if (moveUp()) {
-				generateOneNumber();
-				isgameover();
-			}
-		}
-	}
-});
+})
 function isgameover(){
 	if(nomove(board)){
 		gameover();
