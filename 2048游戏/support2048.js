@@ -1,8 +1,9 @@
+
 function getPosTop(i,j) {
-	return 20+i*120;
+	return cellSpace+i*(cellSpace+cellSideLength);
 }
 function getPosLeft(i,j) {
-	return 20+j*120;
+	return cellSpace+j*(cellSpace+cellSideLength);
 }
 function getNumberBackgroundColor(number){
 	switch(number){
@@ -45,7 +46,7 @@ function canMoveDown(board){
 		for(var j=0;j<4;j++){
 			if(board[i][j]!=0){
 				if(board[i+1][j]==0||board[i][j]==board[i+1][j]){
-					console.log(i,j)
+					
 					return true;
 				}
 			}
