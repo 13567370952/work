@@ -165,6 +165,10 @@ document.addEventListener("touchend",function(event){
 	endy=event.changedTouches[0].pageY;
 	var deltax = endx - startx;
 	var deltay = endy - starty;
+	//判断是否滑动了
+	if(Math.abs(deltax)<0.3*documentWidth&&Math.abs(deltay)<0.3*documentWidth){
+		return;
+	}
 	//x 
 	if(Math.abs(deltax)>=Math.abs(deltay)){
 		if (deltax>0) {
