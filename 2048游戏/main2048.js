@@ -128,24 +128,28 @@ function generateOneNumber(){
 $(document).keydown(function(event){
 	switch(event.keyCode){
 		case 37://LEFT
+		event.preventDefault();//阻止事件发生默认效果
 			if (moveLeft()) {
 				generateOneNumber();
 				isgameover();
 			}
 			break;
 		case 38://up
+		event.preventDefault();//阻止事件发生默认效果
 			if (moveUp()) {
 				generateOneNumber();
 				isgameover();
 			}
 			break;
 		case 39://right
+		event.preventDefault();//阻止事件发生默认效果
 			if (moveRight()) {
 				generateOneNumber();
 				isgameover();
 			}
 			break;
 		case 40://down
+		event.preventDefault();//阻止事件发生默认效果
 			if (moveDown()) {
 				generateOneNumber();
 				isgameover();
@@ -159,6 +163,9 @@ $(document).keydown(function(event){
 document.addEventListener("touchstart",function(event){
 	startx =event.touches[0].pageX;
 	starty =event.touches[0].pageY;
+});
+document.addEventListener("touchmove",function(event){
+	event.preventDefault();
 });
 document.addEventListener("touchend",function(event){
 	endx=event.changedTouches[0].pageX;
