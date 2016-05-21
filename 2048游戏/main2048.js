@@ -34,6 +34,7 @@ function prepareForMobile(){
 }
 function newgame(){
 	//初始化棋盘格
+	$("#score").text(0);
 	init();
 	//随机两个生成两个数字
 	generateOneNumber();
@@ -85,14 +86,34 @@ function updataBoardView(){
 				theNumberCell.text(board[i][j]);
 			}
 			hasConfliced[i][j] = false;
+			if(board[i][j]>512){
+				$(".number-cell").css({
+					"line-height":cellSideLength+"px",
+					"font-size":0.4*cellSideLength+"px"
+				});
+			}else{
+				$(".number-cell").css({
+					"line-height":cellSideLength+"px",
+					"font-size":0.4*cellSideLength+"px"
+				});
+			}
 		}
-		$(".number-cell").css({
-			"line-height":cellSideLength+"px",
-			"font-size":0.6*cellSideLength+"px"
-		});
 	}
 }
 function generateOneNumber(){
+	for(var i = 0;i<4;i++){
+		for(var j = 0;j<4;j++){
+			if(board[i][j]>512){
+				$("#number-cell-"+i+"-"+j).css({
+					"font-size":0.4*cellSideLength+"px"
+				})
+			}else{
+				$("#number-cell-"+i+"-"+j).css({
+					"font-size":0.4*cellSideLength+"px"
+				})
+			}
+		}
+	}
 	if(false){
 		return false;
 	}else{
