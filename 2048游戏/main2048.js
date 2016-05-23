@@ -201,25 +201,25 @@ document.addEventListener("touchend",function(event){
 	if(Math.abs(deltax)>=Math.abs(deltay)){
 		if (deltax>0) {
 			if (moveRight()) {
-				generateOneNumber();
-				isgameover();
+				setTimeout("generateOneNumber()",210);
+				setTimeout("isgameover()",310)
 			}
 		}else{
 			if (moveLeft()) {
-				generateOneNumber();
-				isgameover();
+				setTimeout("generateOneNumber()",210);
+				setTimeout("isgameover()",310)
 			}
 		}
 	}else{//y
 		if(deltay>0){
 			if (moveDown()) {
-				generateOneNumber();
-				isgameover();
+				setTimeout("generateOneNumber()",210);
+				setTimeout("isgameover()",310)
 			}
 		}else{
 			if (moveUp()) {
-				generateOneNumber();
-				isgameover();
+				setTimeout("generateOneNumber()",210);
+				setTimeout("isgameover()",310)
 			}
 		}
 	}
@@ -230,7 +230,7 @@ function isgameover(){
 	}
 }
 function gameover(){
-	console.log("gameover")
+	alert("gameover,你的最终得分是"+score);
 }
 function moveDown(){
 	if(!canMoveDown(board)){
