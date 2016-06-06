@@ -1,3 +1,66 @@
+var data=[{
+	id:"1",
+	name:"菜单1",
+	action:"1",
+	link:"www.baidu.com",
+	module:"我也不知道填什么好",
+	menu:[{
+		id:"1-2",
+		name:"菜单1-2",
+		action:"1",
+		link:"www.baidu.com",
+		module:"我也不知道填什么好"
+	},{
+		id:"1-2",
+		name:"菜单1-2",
+		action:"1",
+		link:"www.baidu.com",
+		module:"我也不知道填什么好"
+	},{
+		id:"1-3",
+		name:"菜单1-3",
+		action:"1",
+		link:"www.baidu.com",
+		module:"我也不知道填什么好"
+	},{
+		id:"1-4",
+		name:"菜单1-4",
+		action:"1",
+		link:"www.baidu.com",
+		module:"我也不知道填什么好"
+	}]
+},{
+	id:"2",
+	name:"菜单2",
+	action:"1",
+	link:"www.baidu.com",
+	module:"我也不知道填什么好",
+	menu:[{
+		id:"2-1",
+		name:"菜单2-1",
+		action:"1",
+		link:"www.baidu.com",
+		module:"我也不知道填什么好"
+	},{
+		id:"2-2",
+		name:"菜单2-2",
+		action:"1",
+		link:"www.baidu.com",
+		module:"我也不知道填什么好"
+	},{
+		id:"2-3",
+		name:"菜单2-3",
+		action:"1",
+		link:"www.baidu.com",
+		module:"我也不知道填什么好"
+	},{
+		id:"2-4",
+		name:"菜单2-4",
+		action:"1",
+		link:"www.baidu.com",
+		module:"我也不知道填什么好"
+	}]
+}]
 $(function(){
 	$("body").on("click",".menuleft li",function(){
 		$(".active").removeClass("active");
@@ -62,10 +125,27 @@ $(function(){
 		twoWith();
 		twoTop();
 	});
+	josnHtml();
 	numeName();
 	twoWith();
 	twoTop();
 })
+//根据josn控制HTML结构
+function josnHtml(){
+	var dataLength = data.length;
+	for(var i=0;i<dataLength;i++){
+		$("#menugroupOne").append("<li><span>菜单名称</span><ul class='menugroupTwo'></ul><div class='btngroup btntwo'><span class='demoSpan1'></span></div></li>")
+		var menulength = data[i].menu.length;
+		$("#menugroupOne>li").eq(i).attr("id",data[i].id);
+		$("#menugroupOne>li>span").eq(i).html(data[i].name);
+		for(var j=0;j<menulength;j++){
+			$("#menugroupOne>li").eq(i).children("ul").append("<li><span>菜单名称</span></li>");
+			$("#menugroupOne>li").eq(i).children("ul").children("li").eq(j).attr("id",data[i].menu[j].id);
+			$("#menugroupOne>li").eq(i).children("ul").find("span").eq(j).html(data[i].menu[j].name);
+		}
+	}
+	menugroupOneWidth(data.length);//根据1级菜单多少决定宽度
+}
 //重置右边的
 function resetName(){
 	$(".numeName").show();
@@ -131,7 +211,6 @@ function twoTop(){
 		}
 	})
 }
-//右边 菜单名称级别的编写
 function numeName(){
 	if($(".active").parent().hasClass("menugroupTwo")){
 		$(".numeGrade").html("二级菜单");

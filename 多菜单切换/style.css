@@ -139,3 +139,10 @@ body{
 .menuright .right .remove{
 	color: red;
 }
+.action{
+	clear: both;
+	padding-left: 10px;
+}
+textarea{
+	border: 1px solid #ccc;
+}
