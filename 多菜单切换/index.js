@@ -3,7 +3,8 @@ $(function(){
 		$(".active").removeClass("active");
 		$(this).addClass("active");
 		numeName();
-		 return false;
+		resetName();
+		return false;
 	})
 	$("#btnAdd1").bind("click",function(){
 		$(".active").removeClass("active");
@@ -22,24 +23,73 @@ $(function(){
 			$(this).hide();
 		}
 		numeName();
+		resetName();
 		return false;
 	})
 	$(".menuright .left input").focus(function(){
 		$(this).css({"border":"1px solid #3498DB"});
 	})
+	$(".menuright .left input").click(function(){
+		return false;
+	})
 	$(".menuright .left input").blur(function(){
 		$(this).css({"border":"1px solid #ccc"});
+		return false;
+	});
+	//重命名
+	$(".rename").bind("click",function(){
+		$(this).hide();
+		$(".save").show();
+		$(".numeName").hide();
+		$(".inputName").show();
+		return false;
+	});
+	$(".save").bind("click",function(){
+		$(this).hide();
+		$(".rename").show();
+		$(".inputName").hide();
+		$(".active span").eq(0).html($(".inputName").val());
+		numeName();
+		$(".numeName").show();
+		return false;
+	});
+	$("body").bind("click",function(){
+		resetName();
+	})
+	$(".remove").bind("click",function(){
+		$(".active").remove();
+		menugroupOneWidth($("#menugroupOne").children().length);
+		twoWith();
+		twoTop();
 	});
 	numeName();
 	twoWith();
 	twoTop();
 })
+//重置右边的
+function resetName(){
+	$(".numeName").show();
+	$(".inputName").hide();
+	$(".save").hide();
+	$(".rename").show();
+}
 //主菜单的宽度
 function menugroupOneWidth(length){
+	if(length<3){
+		$("#btnAdd1").show();
+	}
 	switch(length){
 		case 0:
+		$("#btnAdd1").css({
+			"width":"430px",
+			"left":"0px"
+		})
 		break;
 		case 1:
+		$("#btnAdd1").css({
+			"width":"134px",
+			"left":"296px"
+		})
 		$("#menugroupOne>li").css({"width":"294px"});
 		break;
 		case 2:
@@ -61,9 +111,12 @@ function twoWith(){
 		"width":(btntwoWidth-14)+"px",
 		});
 }
-//二级菜单的宽度
+//二级菜单的高度
 function twoTop(){
 	$(".menugroupTwo").each(function(){
+		if($(this).children("li").length<5){
+			$(this).siblings(".btntwo").show();
+		}
 		topNum = $(this).children("li").length*44;
 		$(this).css({
 			"top":-(topNum+16)+"px"
@@ -85,5 +138,6 @@ function numeName(){
 	}else{
 		$(".numeGrade").html("一级菜单");
 	}
-	$(".numeName").html($(".active span").html());
+	$(".numeName").html($(".active span").eq(0).html());
+	$(".inputName").val($(".active span").eq(0).html());
 }
