@@ -33,7 +33,22 @@ function cpzx(){
 }
 function hd(){
 	var now = 0;
+  var time = setInterval(function(){
+    now++;
+    if(now > 4){
+      now = 0;
+    }
+    goToSlide(now);
+    },5000);
 	function goToSlide(num){
+    clearTimeout(time);
+    time = setInterval(function(){
+    now++;
+    if(now > 4){
+      now = 0;
+    }
+    goToSlide(now);
+    },5000);
     $(".banner").animate({
       marginLeft : (-100 * num) + "%"
     },1000);
@@ -58,14 +73,8 @@ function hd(){
   		now=0;
   	}
   	goToSlide(now);
+    
   })
-   var time = setInterval(function(){
-    now++;
-    if(now > 4){
-      now = 0;
-    }
-    goToSlide(now);
-  	},5000);
 };
 function bzzx(){
   $(".dlnav .bzzx").bind("mouseover",function(){

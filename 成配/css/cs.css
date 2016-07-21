@@ -1,0 +1,77 @@
+body{
+		font:  14px/30px "微软雅黑";
+}
+.nav{
+	height: 30px;
+	padding: 5px 10px;
+	background-color: #125F31;
+}
+.nav .right{
+	float: right;
+}
+.right li li{
+	margin: 0px;
+	font-size:12px;
+	background-color: #125F31;
+}
+.right li ul{
+	position: absolute;
+	z-index: 99999;
+	/*height: 0px;*/
+	display: none;
+	overflow: hidden;
+}
+.right li{
+	cursor: pointer;
+	position: relative;
+	float: left;
+	width: 80px;
+	margin: 0 10px;
+	text-align: center;
+	color:#fff;
+}
+.bannerimg li{
+	float: left;
+	width: 20%;
+	text-align: center;
+	background-color: #9babff;
+}
+.bannerimg{
+	position: absolute;
+	left:0%;	
+	width:500%;
+}
+.banner{
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+	height: 374px;
+}
+.dian{
+	position: absolute;
+	top:330px;
+	left: 50%;
+	margin-left: -40px;
+}
+.dian li {
+	width: 10px;
+	height: 10px;
+	border-radius: 10px;
+	background-color: #fff;
+	float: left;
+	margin: 0 3px;
+	cursor: pointer;
+}
+.dian .active{
+	background-color: red;
+}
+.fangxiang span{
+	position: absolute;
+	top:50%;
+	margin-top:-23px;
+	cursor:pointer;
+}
+.fangxiang .you{
+	left: 100%;
+	margin-left: -46px;
+}

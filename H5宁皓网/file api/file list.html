@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>FileReader </title>
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+	<style type="text/css">
+		ul{
+			padding: 20px 0px;
+			border: 1px solid #ccc;
+		}
+	</style>
+</head>
+<body>
+	<header id="header" class="page-header">
+		<div class="container">
+			<h1>文件列表</h1>
+			<h5>filelist</h5>
+		</div>
+	</header>
+	<div class="container"> 
+		<div class="row">
+			<ul class="list-group clearfix">
+			</ul>
+			<form name="upload">
+				<a href="#" id="selectbtn" class="btn btn-primary">选择文件</a>
+				<span class="badge pull-right">0</span>
+				<input name="fileselect" type="file" multiple style="display: none;">
+			</form>
+			<div id="eventstaus">
+				
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="jquery.min.js"></script>
+	<script type="text/javascript">
+	(function(){
+		var listgroup = document.querySelector(".list-group");
+		    fileSelect = document.forms['upload']['fileselect'];
+		    //监听替身a标签
+		    selectBtn = document.getElementById('selectbtn');
+		    selectBtn.addEventListener('click', function(event){
+		    	fileSelect.click();
+		    	event.preventDefault();
+		    },false);
+		    //监听 选择文件 表单元素的 change 事件
+		    fileSelect.addEventListener('change',displayFileInfo,false);
+		    function displayFileInfo(event){
+		    	//console.log(event);
+		    	listgroup.innerHTML="";
+		    	event.stopPropagation();
+		    	event.preventDefault();
+		    	var file = event.target.files||event.dataTransfer.files;
+		    	document.querySelector('.badge').innerHTML=file.length;
+		    	//新建文件阅读器
+		    	var  reader =  new FileReader();
+		    	//找到显示进度条的容器
+		    	var eventStaus = document.getElementById('eventstaus');
+		    	//进度条所需的元素
+		    	var progresss = document.createElement('div');
+		    	progresss.classList.add('progress','progress-striped','active');
+		    	var progressbar = document.createElement('div');
+		    	progressbar.classList.add('progress-bar');
+		    	progresss.appendChild(progressbar);
+		    	for(var i = 0;i<file.length;i++){
+		    		//显示所有上传的图像文件
+		    		// var li = document.createElement('li');
+		    		//  img = document.createElement('img');
+		    		//  url = window.URL.createObjectURL(file[i]);
+		    		//  thumbnailContainer = document.createElement('div');
+		    		//  img.src=url;
+		    		//  img.onload = function(){
+		    		//  	window.URL.revokeObjectURL(url);
+		    		//  }
+		    		//  img.classList.add('thumbnail');
+		    		//  thumbnailContainer.appendChild(img);
+		    		//  thumbnailContainer.classList.add('col-md-3');
+		    		//  listgroup.appendChild(thumbnailContainer);
+		    		// 下面的是添加文件信息
+		    		var li = document.createElement('li');
+		    		// reader.readAsText(file[i]);
+		    		reader.readAsBinaryString(file[i]);
+		    		reader.onloadstart = function(){
+		    			eventStaus.appendChild(progresss);
+		    		}
+		    		reader.onprogress = function(event){
+		    			var progressStatus = 'width:'+Math.round(event.loaded/event.total*100)+"%";
+		    			console.log(progressStatus);
+		    			progressbar.setAttribute('style',progressStatus)
+		    		}
+		    		reader.onload = function(event){
+		    		// li.classList.add('list-group-item');
+		    		// var content = document.createTextNode(
+		    		// 	// file[i].name+'<br/>'+
+		    		// 	// file[i].type+'<br/>'+
+		    		// 	// Math.round(file[i].size/1024/1024*100)/100+"MB"+"<br/>"+
+		    		// 	// file[i].lastModifiedDate.toLocaleDateString()
+		    		// 	event.target.result
+		    		// 	);
+		    		// li.appendChild(content);
+		    		// listgroup.appendChild(li);
+		    		eventStaus.innerHTML='';
+		    		}
+		    		
+		    	}
+		    }
+		    //自由拖放
+		    //提示内容
+		    listgroup.innerHTML="<p class='hint'>拖放文件到这里</p>"
+		    //监听 drop与dragover事件
+		    listgroup.addEventListener('drop', displayFileInfo,false);
+		    listgroup.addEventListener('dragover', onDragOver,false);
+		    function onDragOver(event){
+		    	event.stopPropagation();
+		    	event.preventDefault(); 
+		    }
+	})()
+	</script>
+</body>
+</html>
