@@ -1,0 +1,68 @@
+/* [ global ] - start */
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, form, fieldset, p, blockquote, input, img { margin: 0;padding: 0; }
+body, input, button, select, textarea, table, td { font-family: "微软雅黑", Verdana, airal; }
+body { background: #1a1e1d url(../img/guide_index_bg.jpg) top center no-repeat;font-size: 12px;text-align: center;color: #e2d7a4; }
+ul, ol, li { list-style: none; }
+table { border-collapse: collapse;border-spacing: 0; }
+td { height: 20px;line-height: 20px;vertical-align: middle; }
+img { border: 0; }
+a { outline: none;color: #ffc000; }
+a:hover {  }
+b { font-weight: normal; }
+/* [ global ] - end */
+
+/* [ common ] - start */
+.ct { text-align: center; }
+.pl90 { padding-left: 90px; }
+.red { color: #FF0000; }
+.fs11 { font-size: 12px; }
+.tar { text-align: right; }
+.pt5 { padding-top: 5px; }
+a.c1 { color: #870100;text-decoration: none; }
+a.c1:hover { text-decoration: underline; }
+a.c2 { color: #f1e129;text-decoration: none; }
+a.c2:hover { text-decoration: underline; }
+.mark { color: #870100; }
+.m1 { color: #f1e129; }
+.m2 { color: #ffbb00; }
+b.m1 { font-weight: normal; }
+.mc { color: #FF0000; }
+/* [ common ] - end */
+
+.main { width: 1000px;height: 900px;margin: 0 auto;overflow: hidden; }
+
+/* [ 头部 ] - start */
+.header { height: 153px;background: url(../img/guide_header_bg.jpg) no-repeat;position: relative; }
+.header .logo { display: block;width: 200px;height: 70px;position: absolute;left: 135px;top: 0;text-indent: -9999px; }
+/* [ 头部 ] - end */
+
+/* [ 内容 ] - start */
+.content_01 { background: url(../img/guide_cont_bg1.jpg) no-repeat;height: 352px;position: relative; }
+.content_01 a { position: absolute;display: block;text-indent: -9999px; }
+.content_01 a:hover { background: url(../img/guide_nav.jpg) no-repeat; }
+.content_01 a.nav_01 { width: 249px;height: 83px;left: 744px;top: 1px; }
+.content_01 a.nav_01:hover { background-position: -139px 0; }
+.content_01 a.nav_02 { width: 298px;height: 108px;left: 695px;top: 115px; }
+.content_01 a.nav_02:hover { background-position: -90px -85px; }
+.content_01 a.nav_03 { width: 388px;height: 92px;left: 605px;top: 259px; }
+.content_01 a.nav_03:hover { background-position: 0 -195px; }
+.content_02 { background: url(../img/guide_cont_bg2.jpg) no-repeat;height: 218px;position: relative; }
+.content_03 { background: url(../img/guide_cont_bg3.jpg) no-repeat;height: 177px;position: relative; }
+.content_03 .item_01 { position: absolute;left: 35px;top: 10px;width: 276px;height: 132px;overflow: hidden; }
+.content_03 .item_01 a { display: block;width: 276px;height: 132px;background: url(../img/prize.jpg) no-repeat;text-indent: -9999px; }
+.content_03 .item_01 a:hover { background-position: 0 -132px; }
+.content_03 .item_02 { position: absolute;left: 487px;top: 32px;width: 170px;height: 75px;line-height: 25px;overflow: hidden;text-align: left; }
+.content_03 .item_03 { position: absolute;left: 728px;top: 15px;width: 260px;height: 120px;overflow: hidden;text-align: left; }
+.content_03 .item_03 li { height: 24px;line-height: 24px;vertical-align: middle;color: #FFFFFF; }
+/* [ 内容 ] - start */
+
+/* [ 活动规则弹出框 ] - start */
+.maskPop { width: 100%;height: 100%;position: absolute;left: 0;top: 0;z-index: 1;background: #000000;opacity: 0.3;filter: alpha(opacity=30);display: none; }
+.regular {  }
+.regular a.close { width: 36px;height: 36px;position: absolute;right: 13px;top: 13px;background: url(../img/guide_ui.jpg) 0 -45px no-repeat;text-indent: -9999px; }
+.regular a.close:hover { background-position: -37px -45px; }
+.regular_02 { width: 823px;height: 717px;position: absolute;left: 50%;top: 50%;z-index: 2;margin-left: -412px;margin-top: -359px;background: url(../img/act_info_bg1.jpg) no-repeat;display: none; }
+.regular_03 { width: 823px;height: 342px;position: absolute;left: 50%;top: 50%;z-index: 2;margin-left: -412px;margin-top: -171px;background: url(../img/act_info_bg2.jpg) no-repeat;display: none; }
+.regular_03 a.go { position: absolute;left: 313px;top: 281px;width: 188px;height: 44px;text-indent: -9999px; }
+.regular_03 a.go:hover { background: url(../img/guide_ui.jpg) no-repeat; }
+/* [ 活动规则弹出框 ] - end */
